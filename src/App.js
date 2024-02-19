@@ -1,15 +1,10 @@
-import 'bootstrap/dist/css/bootstrap.min.css'
-import { Hero } from './components/Hero/Hero';
-import Head from './components/Navbar';
-import { Container } from 'react-bootstrap';
+import { Hero } from "./components/Hero";
 
 function App() {
-
   return (
-    <Container className='bg-dark p-0' fluid >
-      <Head />
-      <Hero />
-    </Container>
+    <div className="w-full min-h-screen flex justify-center items-center">
+      <Hero /> 
+    </div>
   );
 }
 
