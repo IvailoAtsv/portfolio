@@ -1,41 +1,42 @@
-import React, { useState } from 'react';
-import { IoMenu,IoClose } from "react-icons/io5";
+import { useState } from "react";
 
-export const Header = () => {
+import { IoMenu } from "react-icons/io5";
+import { IoMdClose } from "react-icons/io";
 
-    let [open, setOpen] =useState(false);
-    let Links =[
-        {name:"HOME",link:"/"},
-        {name:"MY PROJECTS",link:"/"},
-        {name:"CONTACTS",link:"/"},
-      ];
+export function Navbar() {
+    const [toggleMenu, setToggleMenu] = useState(true);
 
     return (
-        <div className=' shadow-md w-[100%] sticky top-0 left-0'>
-           <div className='md:flex items-center justify-between bg-lightGray py-4 md:px-10 px-7'>
-            <div className='font-bold h-7 text-2xl cursor-pointer flex items-center gap-1'>
-                <span></span>
-            </div>
-            <div onClick={()=>setOpen(!open)} className='absolute right-8 top-5 cursor-pointer flex items-center justify-center md:hidden w-7 h-7'>
-                {
-                    open ? <IoClose size={40}/>  :<IoMenu  size={40}/> 
-                }
-            </div>
-            {/* linke items */}
-            <ul className={`md:flex md:items-center md:pb-0 pb-12 absolute md:static bg-white md:z-auto z-[-1] left-0 w-full md:w-auto md:pl-0 pl-9 transition-all duration-150 ease-out ${open ? 'top-12' : 'top-[-450px]'}`}>
-                {
-                    Links.map((link) => (
-                    <li className='md:ml-8 md:my-0 my-7 font-semibold'>
-                        <a href={link.link} className='text-gray-800 hover:text-purple duration-500'>{link.name}</a>
-                    </li>))
-                }
-                <button className='btn bg-purple text-background md:ml-8 font-semibold px-3 py-1 rounded duration-500 md:static'>Download CV</button>
-            </ul>
 
 
-            {/* button */}
-           </div>
-        </div>
+        <nav className="bg-white dark:bg-gray-900 fixed w-full z-20 top-0 start-0 border-b border-gray-200 dark:border-gray-600">
+            <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto py-2 px-3">
+
+                <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
+                    <button type="button" className="bg-white px-2 py-1 rounded-lg transition duration-300
+             text-md border-purple border-[2px] text-purple font-semibold hover:bg-purple hover:border-white hover:text-white font-mono">Download CV</button>
+                    <button onClick={() => setToggleMenu(!toggleMenu)} type="button" className="inline-flex items-center px-2 justify-center md:hidden">
+                        {toggleMenu ? <IoMenu size={32} /> : <IoMdClose size={32} />}
+                    </button>
+                </div>
+                <div className={`items-center justify-between ${toggleMenu ? 'hidden' : ' inline-block'} w-full md:flex md:w-auto md:order-1`} id="navbar-sticky">
+                    <ul className="flex flex-col p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white border-purple">
+                        <li>
+                            <button className="block py-2 hover:text-purple px-3 bg-white rounded md:bg-transparent md:p-0" aria-current="page">Home</button>
+                        </li>
+                        <li>
+                            <button className="block py-2 hover:text-purple px-3 bg-white rounded md:bg-transparent md:p-0">About</button>
+                        </li>
+                        <li>
+                            <button className="block py-2 hover:text-purple px-3 bg-white rounded md:bg-transparent md:p-0">Services</button>
+                        </li>
+                        <li>
+                            <button className="block py-2 hover:text-purple px-3 bg-white rounded md:bg-transparent md:p-0">Contact</button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
     );
-};
-
+}
