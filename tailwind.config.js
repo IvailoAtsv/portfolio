@@ -6,6 +6,10 @@ module.exports = {
   ],
   theme: {
     extend: {
+      fontSize: {
+        h1clamp: "clamp(1rem, 6vw, 24rem)",
+        h2clamp: "clamp(1rem, 5vw, 24rem)",
+      },
       colors:{
         background:'#232323',
         lightBg:'#656565',
