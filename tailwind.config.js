@@ -7,9 +7,9 @@ module.exports = {
   theme: {
     extend: {
       fontSize: {
-        h1clamp: "clamp(1rem, 6vw, 7rem)",
-        h2clamp: "clamp(1rem, 5vw, 6rem)",
-        iconClamp: "clamp(3.5rem, 19vw, 13rem)",
+        h1clamp: "clamp(2.5rem, 6vw, 7rem)",
+        h2clamp: "clamp(1.5rem, 5vw, 6rem)",
+        iconClamp: "clamp(4em, 10vw, 13rem)",
       },
       colors: {
         background: '#232323',
@@ -21,7 +21,7 @@ module.exports = {
         imgBg: 'rgba(255,255,255,0.2)'
       },
       animation: {
-        bounce: 'bounce 2s linear infinite',
+        bounce: 'bounce 2s linear 500',
         bounce2: 'bounce 1.5s linear infinite',
         bounce3: 'bounce 2.5s linear infinite',
       }
