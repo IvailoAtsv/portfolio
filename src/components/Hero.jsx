@@ -35,7 +35,7 @@ export const Hero = () => {
                 <FaArrowDown className={` animate-bounce text-lightGray md:hidden ${hideArrow ? 'hidden' : ''} `} size={40} />
                 <div className="w-[90%] lg:w-[50%] max-w-[1000px] flex flex-col justify-center gap-2 items-center md:items-start">
                     <div className="lg:w-[50%]  h-[100%] w-[100%] lg:max-w-[450px]">
-                        <h1 className="text-purple font-mono text-xl pl-[2%]">Hi, my name is...</h1>
+                        <h1 className="text-purple font-mono text-xl pl-[2.5%]">Hi, my name is...</h1>
                         <h2 className="text-white text-h1clamp font-bold sm:whitespace-nowrap">Ivaylo Atanasov.</h2>
                         <h3 className="text-lightGray text-h2clamp sm:whitespace-nowrap">I am a web developer.</h3>
                         <h4 className="text-lightGray pl-1 pt-3">I am a passionate front-end developer with a keen eye for design and a love for creating seamless and intuitive user experiences. I specialize in turning ideas into visually appealing and responsive web applications. </h4>
