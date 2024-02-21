@@ -30,7 +30,7 @@ export const Hero = () => {
         }, 5000);
     }, [])
     return (
-        <div className="w-[100%] min-h-[50vh] lg:h-[80vh] px-4 overflow-x-hidden  bg-background flex justify-center items-start">
+        <div className="w-[100%] min-h-[50vh] lg:h-[80vh] px-4 overflow-x-hidden py-4 bg-background flex justify-center items-start">
             <div className="max-w-[1600px] h-[100%] justify-center flex items-center flex-col-reverse gap-10 lg:flex-row w-[100%]">
                 <FaArrowDown className={` animate-bounce text-lightGray md:hidden ${hideArrow ? 'hidden' : ''} `} size={40} />
                 <div className="w-[90%] lg:w-[50%] max-w-[1000px] flex flex-col justify-center gap-2 items-center md:items-start">
