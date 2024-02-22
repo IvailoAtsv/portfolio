@@ -1,21 +1,25 @@
-const liStyles = 'text-sm whitespace-nowrap block flex justify-center items-center hover:text-purple w-[25%] max-w-[150px] rounded'
-const navBtnStyle = "hover:bg-purple hover:border-background hover:text-black  font-mono transition duration-300 bg-background, border-2 border-purple rounded-md p-1 w-[85%] md:w-[100%] text-purple"
+import { useState } from "react";
+import { IoMdClose } from "react-icons/io";
+import { IoMenu } from "react-icons/io5";
+
 
 export function Navbar() {
 
+    const [nav, setNav] = useState(false)
+    const navBtnStyle = `px-3 py-2 md:p-1 bg-background hover:bg-purple hover:border-background hover:text-black  font-mono transition duration-300 bg-background, md:px-2 border-2 border-purple rounded-md p-1 w-[85%] md:w-[100%] text-purple`
+    const liStyles = `text-sm whitespace-nowrap block flex justify-center items-center hover:text-purple my-3 md:m:0 'w-[90%] md:max-w-[150px] text-xl sm:text-sm rounded`
     return (
 
-        <nav className="bg-background flex justify-center items-center static w-full z-20 top-0 start-0 border-b border-gray">
-            <div className="max-w-[1600px] w-[100%] py-3">
-
-                <ul className="flex w-[90%] mx-auto  md:justify-start md:gap-4 justify-evenly items-center rounded-lg ">
-
+        <nav className={`bg-transparent bg-background backdrop-blur-lg flex justify-center items-center fixed w-full z-50 top-0 start-0 shadow-xl`}>
+            <div className={`max-w-[1600px] w-[100%]  ${nav? 'h-screen  flex justify-evenly items-center flex-col': ''} pt-1 md:py-1`}>
+                <button onClick={() => setNav(!nav)} className={`${nav? 'absolute top-1 left-1':''} ${!nav && 'md:hidden'} ml-2 text-white`}>{nav?< IoMdClose size={40}/> :<IoMenu size={40}/> }</button>
+                <ul className={`md:flex ${nav? '':'hidden'} w-[90%] mx-auto sm:mb-0 mb-10 md:justify-start md:gap-4 justify-evenly items-center rounded-lg `}>
                     <li className={liStyles}>
                         <button className={navBtnStyle}>Home</button>
                     </li>
 
                     <li className={liStyles}>
-                        <button className={navBtnStyle}>About</button>
+                        <button className={navBtnStyle}>Experience</button>
                     </li>
                     <li className={liStyles}>
                         <button className={navBtnStyle}>Services</button>

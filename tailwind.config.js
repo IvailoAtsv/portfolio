@@ -16,7 +16,7 @@ module.exports = {
         lightBg: '#656565',
         gray: '#989898',
         lightGray: '#fefefe',
-        lightPurple: '#7951A8',
+        lightPurple: '#d6b4fc',
         purple: '#b06bf3',
         imgBg: 'rgba(255,255,255,0.2)'
       },
