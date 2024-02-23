@@ -43,7 +43,7 @@ export const experienceCards = [
     icon:<RiHomeOfficeFill/>
 },
     {
-    jobTitle:'Front-end Freelance',
+    jobTitle:'Front-end | Freelance',
     date:'10-2023',
     company:'Alcona Solutions',
     descriptionPoints:[

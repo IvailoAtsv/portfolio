@@ -19,7 +19,7 @@ export function Navbar() {
                     </li>
 
                     <li className={liStyles}>
-                        <button className={navBtnStyle}>Experience</button>
+                        <button className={navBtnStyle}>My Journey</button>
                     </li>
                     <li className={liStyles}>
                         <button className={navBtnStyle}>Services</button>

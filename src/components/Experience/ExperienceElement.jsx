@@ -14,14 +14,14 @@ export const theme = {
 export const ExperienceElement =({icon, jobTitle, descriptionPoints, date, company, skills})=>{
     return (<VerticalTimelineElement
     date={date}
-    dateClassName='md:text-white mx-2 md:m:0'
+    dateClassName='xl:text-white mx-2 md:m:0'
      contentStyle={{ background: 'white', color: 'black', }}
      contentArrowStyle={{ borderRight: '7px solid white' }}
      iconStyle={{ background: theme.background, color: theme.purple }}
      icon={icon}
    >
      <h2 className="text-lg font-bold">{jobTitle}</h2>
-     <h6 className="text-sm">client: {company}</h6>
+     <h6 className="text-sm">for: {company}</h6>
      
      <ul className='p-3'>{descriptionPoints.map(point => <li className='my-1 text-sm list-disc' key={uniqid()}>{point}</li>)}</ul>
  
