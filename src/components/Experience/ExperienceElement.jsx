@@ -1,5 +1,6 @@
 import { VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import uniqid from 'uniqid'
+import { skillStyles } from './Experience';
 
 export const theme = {
     background: '#00022e',
@@ -26,7 +27,7 @@ export const ExperienceElement =({icon, jobTitle, descriptionPoints, date, compa
      <ul className='p-3'>{descriptionPoints.map(point => <li className='my-1 text-sm list-disc' key={uniqid()}>{point}</li>)}</ul>
  
  <div className='flex flex-wrap justify-start gap-1 items-start'>
- {skills.map(skill => <p key={`${uniqid()} - skill`} className='px-1 rounded-md border-purple self-start border-2 inline-block'>{skill}</p>)}
+ {skills.map(skill => <p key={`${uniqid()} - skill`} className={skillStyles}>{skill}</p>)}
  </div>
  
    </VerticalTimelineElement>)

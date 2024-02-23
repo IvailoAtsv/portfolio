@@ -19,6 +19,7 @@ module.exports = {
         lightGray: '#fefefe',
         lightPurple: '#d6b4fc',
         purple: '#b06bf3',
+        darkPurple:'#4c1e72',
         imgBg: 'rgba(255,255,255,0.2)'
       },
       animation: {

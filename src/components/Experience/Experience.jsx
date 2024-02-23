@@ -8,10 +8,12 @@ import { theme } from './ExperienceElement'
 import { mentorship, educationCards, experienceCards } from '../../constants/experience'
 import { VscDebugBreakpointLogUnverified } from "react-icons/vsc";
 
+export const skillStyles = 'px-2 py-1 bg-opacity-40 rounded-md text-darkPurple bg-purple self-start inline-block'
+
 export const Experience = () => {
 
   return (
-    <div className='my-10 bg-background w-full h-full'>
+    <div className='my-5 bg-background w-full h-full'>
       <div className='w-[90%] max-w-[1800px] mx-auto'>
         <h1 className="text-white mb-6 text-h1clamp font-bold sm:whitespace-nowrap">My Journey</h1>
 
@@ -48,7 +50,7 @@ export const Experience = () => {
         <VerticalTimeline layout="1-column-left">
           <VerticalTimelineElement
            date={'11-2023 - ongoing'}
-           className='md:text-white mx-2 md:m:0'
+           className='md:text-white md:m:0'
             dateClassName='md:text-white mx-2 md:m:0'
             contentStyle={{ background: 'white', color: 'black' }}
             contentArrowStyle={{ borderRight: '7px solid white' }}
@@ -66,7 +68,7 @@ export const Experience = () => {
             <h3>Mutual improvements in:</h3>
             <div className='flex flex-wrap justify-start gap-1 items-start'>
               {mentorship.map(elem =>
-                <p key={`${uniqid()} - skill`} className='px-1 rounded-md border-purple self-start border-2 inline-block'>{elem}</p>
+                <p key={`${uniqid()} - skill`} className='px-2 py-1 bg-opacity-40 rounded-md text-darkPurple bg-purple self-start inline-block'>{elem}</p>
               )}
             </div>
 
