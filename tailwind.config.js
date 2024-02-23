@@ -7,12 +7,13 @@ module.exports = {
   theme: {
     extend: {
       fontSize: {
-        h1clamp: "clamp(2.5rem, 6vw, 7rem)",
-        h2clamp: "clamp(1.5rem, 5vw, 6rem)",
+        h1clamp: "clamp(2.5rem, 5.5vw, 6rem)",
+        h2clamp: "clamp(1.5rem, 4.5vw, 5rem)",
+        h3clamp: "clamp(1.5rem, 3vw, 3rem)",
         iconClamp: "clamp(4em, 10vw, 13rem)",
       },
       colors: {
-        background: '#232323',
+        background: '#00001C',
         lightBg: '#656565',
         gray: '#989898',
         lightGray: '#fefefe',

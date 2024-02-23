@@ -2,3 +2,24 @@
 @tailwind components;
 @tailwind utilities;
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+
+
+:root {
+    --main-color: #b06bf3;
+    --background: #00001C;
+  }
+
+body{
+    background-color:#00001C ;
+}
+::-webkit-scrollbar {
+    width: 8px; 
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #b06bf3; 
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: #f1f1f1; 
+  }
