@@ -1,3 +1,4 @@
+import { ContactMe } from "./components/ContactMe";
 import { Experience } from "./components/Experience/Experience";
 import { Hero } from "./components/Hero";
 import { Navbar } from "./components/Navbar";
@@ -8,6 +9,7 @@ function App() {
       <Navbar />
       <Hero />
       <Experience />
+      <ContactMe />
     </div>
   );
 }

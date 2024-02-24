@@ -50,8 +50,7 @@ export const Experience = () => {
         <VerticalTimeline layout="1-column-left">
           <VerticalTimelineElement
            date={'11-2023 - ongoing'}
-           className='md:text-white md:m:0'
-            dateClassName='md:text-white mx-2 md:m:0'
+            dateClassName='mx-2 md:m:0'
             contentStyle={{ background: 'white', color: 'black' }}
             contentArrowStyle={{ borderRight: '7px solid white' }}
             iconStyle={{ background: theme.background, color: theme.purple }}

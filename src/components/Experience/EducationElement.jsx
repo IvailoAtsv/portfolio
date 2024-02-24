@@ -7,7 +7,7 @@ export const EducationElement =({icon, school, descriptionPoints, date, skills})
     return (
     <VerticalTimelineElement
     date={date}
-    dateClassName='xltext-white text-black mx-2 md:m:0'
+    dateClassName='text-black'
      contentStyle={{ background: 'white', color: 'black'}}
      contentArrowStyle={{ borderRight: '7px solid white' }}
      iconStyle={{ background: theme.background, color: theme.purple }}

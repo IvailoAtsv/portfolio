@@ -7,9 +7,10 @@ module.exports = {
   theme: {
     extend: {
       fontSize: {
-        h1clamp: "clamp(2.5rem, 5.5vw, 6rem)",
-        h2clamp: "clamp(1.5rem, 4.5vw, 5rem)",
+        h1clamp: "clamp(2.8rem, 5.5vw, 6rem)",
+        h2clamp: "clamp(2.35rem, 4.5vw, 5rem)",
         h3clamp: "clamp(1.5rem, 3vw, 3rem)",
+        labelClamp:"clamp(1.3rem, 1.8vw, 2.3rem)",
         iconClamp: "clamp(4em, 10vw, 13rem)",
       },
       colors: {
@@ -19,6 +20,7 @@ module.exports = {
         lightGray: '#fefefe',
         lightPurple: '#d6b4fc',
         purple: '#b06bf3',
+        purpleGrad:'linear-gradient(90deg, #b06bf3, #4169E1)',
         darkPurple:'#4c1e72',
         imgBg: 'rgba(255,255,255,0.2)'
       },
