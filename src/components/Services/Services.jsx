@@ -61,7 +61,7 @@ const WizardCard = ({ src, title }) => {
     return (
         // card
         <div className="lg:w-[20%] my-2 h-[350px] shadow-lg bg-gray bg-opacity-10 transition duration-500 hover:shadow-2xl relative group p-4 w-[90%] flex flex-col justify-between items-center rounded-xl text-white overflow-hidden ">
-            <div className="p-5 rounded-xl w-full h-full bg-white ">
+            <div className="p-5 rounded-xl w-full h-full max-h-[220px] bg-white ">
                 <img src={src} className="object-contain mx-auto max-h-[200px]"/>
             </div>
             <h2 className="text-2xl py-4">{title}</h2>

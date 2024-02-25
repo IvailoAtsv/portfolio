@@ -116,7 +116,7 @@ const LinkPair = ({href, text, icon}) => {
         className="flex bg-gray bg-opacity-10 gap-2 rounded-lg text-2xl p-[10px] justify-start w-full items-center mb-5">
             {icon}
             <p>{text}</p>
-            <a href={href} className={`${buttonStyle} ml-auto text-sm px-6 my-auto`}> Go</a>
+            <a href={href} target="_blank" className={`${buttonStyle} ml-auto text-sm px-6 my-auto`}> Go</a>
         </div>
     )
 }
