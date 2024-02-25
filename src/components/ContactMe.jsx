@@ -1,24 +1,32 @@
-import { forwardRef, useEffect, useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { useSpring, animated } from 'react-spring';
 import { useForm } from "react-hook-form"
 import { AccentTitle, SecondaryTitle } from "./ReusableComponents/Titles"
 import { buttonStyle } from '../components/Hero'
 import { links } from '../constants/links'
-
+import emailjs from '@emailjs/browser'
 
 const inputStyles = "focus:outline-none w-[100%] lg:w-[95%] px-2 py-3 mb-5 text-2xl rounded-md text-white bg-background border-2 border-purple"
 const labelStyles = "font-mono text-lightGray text-2xl"
 const labelErrorStyles = "font-mono text-red-600 text-2xl"
-export const ContactMe = forwardRef((props, contactRef) => {
+export const ContactMe = () => {
+
+  const [disabled,setDisabled] = useState(false)
+
     const {
         register,
         handleSubmit,
         watch,
         formState: { errors },
       } = useForm()
-    
-
-      const onSubmit = (data) => console.log(data)
+      const onSubmit =async (data) => {
+        const params = {
+          name:data.name,
+          email:data.email,
+          message:data.message
+        }
+        await emailjs.send(process.env.REACT_APP_SERVICE_ID,process.env.REACT_APP_TEMPLATE,params, process.env.REACT_APP_PUBLIC)
+      }
     // dear god, these animations are not worth the effort
     const componentRef = useRef(null);
     const [isVisible, setIsVisible] = useState(false);
@@ -67,7 +75,7 @@ export const ContactMe = forwardRef((props, contactRef) => {
                     <input {...register("name", {required:'Please enter a name', minLength:3})} type="text" className={inputStyles} />
                     {errors.email ?
                     <label className={labelErrorStyles}> {errors.email.message}</label> 
-                    :<label className={labelStyles}>"Your favourite email?"</label>
+                    :<label className={labelStyles}>Your favourite email?</label>
                     }
                     <input type="text" {...register("email",{required:'Please enter a valid email',pattern:
                             /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,})} className={inputStyles} />
@@ -76,7 +84,7 @@ export const ContactMe = forwardRef((props, contactRef) => {
                     :<label className={labelStyles}>What's on your mind?</label>
                     }
                     <input type="text" {...register("message", {required:'Please leave a message'})} className={inputStyles} />
-                    <button type="submit" className={`${buttonStyle} my-2`}>Let's have a chat!</button>
+                    <button type="submit" disabled={disabled} className={`${buttonStyle} my-2`}>Let's have a chat!</button>
                 </animated.form>
                 <animated.div style={slideAnimation} className="text-center w-full flex-1 py-8 lg:py-3 self-center">
                     <AccentTitle text="Or..." classes="overflow-hidden z-50"/>
@@ -92,7 +100,7 @@ export const ContactMe = forwardRef((props, contactRef) => {
     );
 
 
-})
+}
 
 const LinkPair = ({href, text, icon}) => {
     return (
