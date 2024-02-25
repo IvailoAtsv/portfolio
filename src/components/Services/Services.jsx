@@ -47,8 +47,8 @@ export const Services = () => {
                     <MainTitle text="Services" classes="mr-auto" />
                     <h3 className="text-3xl mr-auto font-semibold text-white">My<span className="inline text-purple"> web wizardry</span> enhances your online presence by...</h3>
                     <div className="h-[100%] mt-10 w-full flex justify-center lg:justify-evenly items-center flex-wrap">
-                        <WizardCard src={create} title={`Working up elegant designs`}> </WizardCard>
-                        <WizardCard src={design} title="Creating stunning websites"> </WizardCard>
+                        <WizardCard src={design} title={`Working up elegant designs`}> </WizardCard>
+                        <WizardCard src={create} title="Creating stunning websites"> </WizardCard>
                         <WizardCard src={support} title="Providing ongoing support"> </WizardCard>
                     </div>
                 <AccentTitle text="And more..." classes="mr-auto my-5"/>

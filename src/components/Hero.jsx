@@ -7,6 +7,8 @@ import {enterRightAnimation, enterLeftAnimation} from '../constants/animations'
 import { MainTitle, SecondaryTitle, AccentTitle } from "./ReusableComponents/Titles";
 import laptop from '../images/laptop.png'
 import { icons } from "../constants/skillIcons";
+import {saveAs} from 'file-saver'
+import CV from '../other/CV.pdf'
 
 export const buttonStyle = "bg-background self-start p-2 rounded-lg transition duration-300 text-md border-purple border-[2px] text-purple hover:bg-purple hover:border-background hover:text-black font-mono"
 
@@ -16,6 +18,10 @@ export const Hero = () => {
     const enterRight = useSpring({...enterRightAnimation});
 
     const [showArrow, setShowArrow] = useState(false)
+
+    const downloadCV = () =>{
+        saveAs(CV,"Ivaylo's CV")
+    }
 
     useEffect(()=>{
     setTimeout(() => {
@@ -37,7 +43,7 @@ export const Hero = () => {
                         <h4 className="text-lightGray py-2">Passionate about front-end and full stack development, I possess a keen eye for design and a genuine love for crafting seamless and intuitive user experiences. My expertise lies in transforming concepts into visually striking and responsive web applications. </h4>
 
                     </div>
-                    <button className={buttonStyle}>Check out my CV!</button>
+                    <button onClick={downloadCV} className={buttonStyle}>Check out my CV!</button>
 
                 </animated.div>
 
