@@ -9,6 +9,10 @@
     --background: #00001C;
   }
 
+  * {
+    scroll-margin-top: 50px;
+  }
+
 body{
     background-color:#00001C ;
 }

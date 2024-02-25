@@ -1,14 +1,15 @@
-import { useForm, SubmitHandler } from "react-hook-form"
+import { forwardRef, useEffect, useRef, useState } from 'react';
 import { useSpring, animated } from 'react-spring';
+import { useForm } from "react-hook-form"
 import { AccentTitle, SecondaryTitle } from "./ReusableComponents/Titles"
 import { buttonStyle } from '../components/Hero'
 import { links } from '../constants/links'
-import { useEffect, useRef, useState } from 'react';
+
 
 const inputStyles = "focus:outline-none w-[100%] lg:w-[95%] px-2 py-3 mb-5 text-2xl rounded-md text-white bg-background border-2 border-purple"
 const labelStyles = "font-mono text-lightGray text-2xl"
 const labelErrorStyles = "font-mono text-red-600 text-2xl"
-export const ContactMe = () => {
+export const ContactMe = forwardRef((props, contactRef) => {
     const {
         register,
         handleSubmit,
@@ -16,6 +17,7 @@ export const ContactMe = () => {
         formState: { errors },
       } = useForm()
     
+
       const onSubmit = (data) => console.log(data)
     // dear god, these animations are not worth the effort
     const componentRef = useRef(null);
@@ -51,12 +53,12 @@ export const ContactMe = () => {
       }, []);
 
     return (
-        <div ref={componentRef} className="min-h-[95vh] relative flex flex-col justify-center items-center w-full">
+        <div id='contact' ref={componentRef} className="min-h-[95vh] relative flex flex-col justify-center items-center w-full">
             <animated.section  style={slideAnimation} className=" max-w-[1800px] py-5 w-[90%]">
                 <AccentTitle text={"Like what you're seeing?"} classes="mr-auto" />
             </animated.section>
             <div className="max-w-[1800px  min-h-[90vh] lg:min-h-[45vh] py-4 relative w-[90%] justify-between flex flex-col lg:flex-row items-start">
-                <animated.form onSubmit={handleSubmit(onSubmit)} style={slideAnimation} className="flex-2  w-full flex p-4 flex-col border-2 border-white lg:max-w-[42%] justify-evenly items-start rounded-xl">
+                <animated.form onSubmit={handleSubmit(onSubmit)} style={slideAnimation} className="flex-2  w-full flex p-4 flex-col border-white lg:max-w-[42%] justify-evenly items-start rounded-xl">
                     <SecondaryTitle text={'Get in touch now'} classes='mb-5'/>
                     {errors.name ?
                     <label className={labelErrorStyles}> {errors.name.message}</label> 
@@ -76,8 +78,10 @@ export const ContactMe = () => {
                     <input type="text" {...register("message", {required:'Please leave a message'})} className={inputStyles} />
                     <button type="submit" className={`${buttonStyle} my-2`}>Let's have a chat!</button>
                 </animated.form>
-                <animated.div style={slideAnimation} className="text-center flex-1 py-8 lg:py-3 self-center"><AccentTitle text="Or..." /></animated.div>
-                <animated.section style={slideAnimation} className="text-white p-4  border-white border-2 flex-2 w-full lg:max-w-[42%] rounded-xl flex flex-col justify-between items-start">
+                <animated.div style={slideAnimation} className="text-center w-full flex-1 py-8 lg:py-3 self-center">
+                    <AccentTitle text="Or..." classes="overflow-hidden z-50"/>
+                    </animated.div>
+                <animated.section style={slideAnimation} className="text-white p-4  border-white flex-2 w-full lg:max-w-[42%] rounded-xl flex flex-col justify-between items-start">
                     <h1 className="text-h2clamp whitespace-nowrap mb-5 font-semibold"> Find me on...</h1>
                     <div className=" text-3xl flex flex-col rounded-xl flex-wrap items-start justify-evenly h-full text-lightGray  w-full my-2 md:my-0">
                        {links.map(link => <LinkPair key={link.text} text={link.text} href={link.href} button={link.button} icon={link.icon} />)}
@@ -88,7 +92,7 @@ export const ContactMe = () => {
     );
 
 
-}
+})
 
 const LinkPair = ({href, text, icon}) => {
     return (

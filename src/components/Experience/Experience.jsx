@@ -13,7 +13,7 @@ export const skillStyles = 'px-2 py-1 bg-opacity-40 rounded-md text-darkPurple b
 export const Experience = () => {
 
   return (
-    <div className='my-5 bg-background w-full h-full'>
+    <div id='experience' className='my-5 bg-background w-full h-full'>
       <div className='w-[90%] max-w-[1800px] mx-auto'>
         <h1 className="text-white mb-6 text-h1clamp font-bold sm:whitespace-nowrap">My Journey</h1>
 
