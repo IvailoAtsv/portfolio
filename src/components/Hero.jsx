@@ -42,13 +42,14 @@ export const Hero = () => {
                 </animated.div>
 
                 <animated.div style={enterRight} className="lg:w-[50%] w-[90%] relative max-w-[750px] overflow-hidden">
-                    <img alt="Animation displaying all of my skills" src={laptop} className="w-[100%]" />
-                    <Marquee direction="left" pauseOnHover={true} play={true} speed={80} className='shadow-md absolute top-[2.3%] bg-black left-[13.5%] max-w-[600px] w-[73%] h-[65.5%] text-lightGray my-auto'>
-                        {icons.map((icon) => <SkillIcon key={uniqid()} icon={icon.icon} title={icon.title} />)}
-                    </Marquee>
-                    {/* </div> */}
+    <img alt="Animation displaying all of my skills" src={laptop} className="w-[100%]" />
+    <div className='shadow-md absolute top-[2.3%] bg-black left-[13.5%] max-w-[600px] w-[73%] h-[65.5%] text-lightGray my-auto'>
+        <Marquee direction="left" pauseOnHover={true} play={true} className="my-auto h-full" speed={80}>
+            {icons.map((icon) => <SkillIcon key={uniqid()} icon={icon.icon} title={icon.title} />)}
+        </Marquee>
+    </div>
+</animated.div>
 
-                </animated.div>
 
             </div>
 
