@@ -34,7 +34,7 @@ export const Hero = () => {
                         <AccentTitle text={'Hi, my name is...'}/>
                         <MainTitle classes="whitespace-nowrap" text ={'Ivaylo Atanasov.'}/>
                         <SecondaryTitle classes="whitespace-nowrap" text={"I am a web developer"} />
-                        <h4 className="text-lightGray py-2">I am a passionate front-end developer with a keen eye for design and a love for creating seamless and intuitive user experiences. I specialize in turning ideas into visually appealing and responsive web applications. </h4>
+                        <h4 className="text-lightGray py-2">Passionate about front-end and full stack development, I possess a keen eye for design and a genuine love for crafting seamless and intuitive user experiences. My expertise lies in transforming concepts into visually striking and responsive web applications. </h4>
 
                     </div>
                     <button className={buttonStyle}>Check out my CV!</button>
