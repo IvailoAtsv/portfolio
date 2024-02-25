@@ -64,7 +64,7 @@ export const Hero = () => {
 }
 export const SkillIcon = ({ icon, title }) => {
     return (
-        <div className="flex flex-col justify-center items-center mx-3 text-lightGray hover:text-purple">
+        <div className="flex transition duration-300 flex-col justify-center items-center mx-3 text-lightGray hover:text-purple">
             {icon}
             <p className="pt-2 text-lg font-mono ">{title}</p>
         </div>
