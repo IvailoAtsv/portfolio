@@ -8,9 +8,9 @@ import emailjs from '@emailjs/browser'
 import { FaHeart } from "react-icons/fa";
 import Loader from 'react-loaders'
 
-const inputStyles = "focus:outline-none w-[100%] lg:w-[95%] px-2 py-3 mb-5 text-2xl rounded-md text-white bg-background border-2 border-purple"
-const labelStyles = "font-mono text-lightGray text-2xl"
-const labelErrorStyles = "font-mono text-red-600 text-2xl"
+const inputStyles = "focus:outline-none w-[100%] lg:w-[95%] px-2 py-3 mb-5 text-2xl rounded-md text-white bg-gray bg-opacity-10  border-b-2 border-purple"
+const labelStyles = "font-mono mb-1 text-lightGray text-2xl"
+const labelErrorStyles = "font-mono mb-1 text-red-600 text-2xl"
 export const ContactMe = () => {
 
   const [sent,setSent] = useState(false)

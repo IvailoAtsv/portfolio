@@ -51,7 +51,6 @@ export const Services = () => {
                         <WizardCard src={create} title="Creating stunning websites"> </WizardCard>
                         <WizardCard src={support} title="Providing ongoing support"> </WizardCard>
                     </div>
-                <AccentTitle text="And more..." classes="mr-auto my-5"/>
                 </div>
             </animated.div>
         </div>

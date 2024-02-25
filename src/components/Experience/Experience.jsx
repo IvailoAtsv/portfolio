@@ -19,7 +19,7 @@ export const Experience = () => {
 
 <JourneyTitle text="Education" />
 
-        <VerticalTimeline layout='1-column-right'>
+        <VerticalTimeline layout='1-column-left'>
           {educationCards.map(school =>
             <EducationElement
               key={uniqid()}
