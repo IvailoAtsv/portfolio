@@ -1,19 +1,19 @@
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
-import 'react-vertical-timeline-component/style.min.css';
 import uniqid from 'uniqid'
+import { VscDebugBreakpointLogUnverified } from "react-icons/vsc";
+import 'react-vertical-timeline-component/style.min.css';
 import { FaPeopleGroup } from "react-icons/fa6";
 import { EducationElement } from './EducationElement';
 import { ExperienceElement } from './ExperienceElement';
 import { theme } from './ExperienceElement'
 import { mentorship, educationCards, experienceCards } from '../../constants/experience'
-import { VscDebugBreakpointLogUnverified } from "react-icons/vsc";
 
 export const skillStyles = 'px-2 py-1 bg-opacity-40 rounded-md text-darkPurple bg-purple self-start inline-block'
 
 export const Experience = () => {
 
   return (
-    <div id='experience' className='my-5 bg-background w-full h-full'>
+    <div id='experience' className='bg-background pb-20 w-full h-full'>
       <div className='w-[90%] max-w-[1800px] mx-auto'>
         <h1 className="text-white mb-6 text-h1clamp font-bold sm:whitespace-nowrap">My Journey</h1>
 

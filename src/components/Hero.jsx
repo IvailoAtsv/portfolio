@@ -26,9 +26,9 @@ export const Hero = () => {
     }, 2000);
 }, [])
     return (
-        <div id="home" className="w-[100%] py-10 relative min-h-[100vh] md:my-auto overflow-x-hidden bg-background flex justify-center items-center">
-                {showArrow && <FaArrowDown className={`animate-bounce text-lightGray absolute lg:bottom-[1%] bottom-[5%] mx-auto`} size={40} />}
-            <div className="max-w-[1800px] w-[90%] h-[100%] justify-evenly lg:justify-between flex sm:gap-2 gap-12 items-center flex-col-reverse lg:flex-row ">
+        <div id="home" className="w-full py-10 relative h-screen md:my-auto overflow-x-hidden bg-background flex justify-center items-center">
+                {showArrow && <FaArrowDown className={`animate-bounce text-lightGray absolute lg:bottom-[3%] bottom-[8%] mx-auto`} size={40} />}
+            <div className="max-w-[1800px] pb-10 w-[90%] h-[100%] justify-center lg:justify-between flex sm:gap-2 gap-12 items-center flex-col-reverse lg:flex-row ">
                 <animated.div style={enterLeft} className="w-[90%] lg:w-[50%] max-w-[1000px] flex flex-col justify-center gap-2 items-center md:items-start">
                     <div className="lg:w-[50%] h-[100%] w-[100%]">
                         <AccentTitle text={'Hi, my name is...'}/>

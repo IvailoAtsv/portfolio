@@ -16,7 +16,7 @@ module.exports = {
       colors: {
         background: '#00001C',
         lightBg: '#656565',
-        gray: '#989898',
+        gray: '#eee',
         lightGray: '#fefefe',
         lightPurple: '#d6b4fc',
         purple: '#b06bf3',

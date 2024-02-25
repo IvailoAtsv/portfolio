@@ -53,11 +53,11 @@ export const ContactMe = forwardRef((props, contactRef) => {
       }, []);
 
     return (
-        <div id='contact' ref={componentRef} className="min-h-[95vh] relative flex flex-col justify-center items-center w-full">
-            <animated.section  style={slideAnimation} className=" max-w-[1800px] py-5 w-[90%]">
+        <div id='contact' ref={componentRef} className="h-auto relative flex flex-col justify-center items-center w-full">
+            <animated.section  style={slideAnimation} className=" py-5 pl-1 max-w-[1800px] w-[90%]">
                 <AccentTitle text={"Like what you're seeing?"} classes="mr-auto" />
             </animated.section>
-            <div className="max-w-[1800px  min-h-[90vh] lg:min-h-[45vh] py-4 relative w-[90%] justify-between flex flex-col lg:flex-row items-start">
+            <div className="max-w-[1800px] min-h-[90vh] lg:min-h-[45vh] py-4 relative w-[90%] justify-between flex flex-col lg:flex-row items-start">
                 <animated.form onSubmit={handleSubmit(onSubmit)} style={slideAnimation} className="flex-2  w-full flex p-4 flex-col border-white lg:max-w-[42%] justify-evenly items-start rounded-xl">
                     <SecondaryTitle text={'Get in touch now'} classes='mb-5'/>
                     {errors.name ?
@@ -97,7 +97,7 @@ export const ContactMe = forwardRef((props, contactRef) => {
 const LinkPair = ({href, text, icon}) => {
     return (
         <div
-        className="flex bg-gray bg-opacity-10 gap-2 rounded-lg text-2xl p-[11px] justify-start w-full items-center mb-5">
+        className="flex bg-gray bg-opacity-10 gap-2 rounded-lg text-2xl p-[10px] justify-start w-full items-center mb-5">
             {icon}
             <p>{text}</p>
             <a href={href} className={`${buttonStyle} ml-auto text-sm px-6 my-auto`}> Go</a>

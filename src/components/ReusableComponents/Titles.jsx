@@ -10,6 +10,14 @@ export const SecondaryTitle = ({text, lightTheme = false, classes = ''}) =>{
 }
 export const AccentTitle = ({text, classes = ''}) => {
     return (
-    <h2 className={`text-purple font-mono text-xl ${classes}`}>{text}</h2>
+    <h2 className={`text-purple m-0 font-mono text-xl ${classes}`}>{text}</h2>
+    )
+}
+export const IconTitlePair = ({text, icon, lightTheme = false,classes =''}) => {
+    return (
+        <div className={`flex mr-auto justify-start items-center gap-2 ${classes}`}>
+            {icon}
+            <SecondaryTitle lightTheme={lightTheme} text={text}/>
+</div>
     )
 }
