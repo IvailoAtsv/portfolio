@@ -60,9 +60,9 @@ export const experienceCards = [
     date:'11-2023',
     company:'Vention',
     descriptionPoints:[
-        "Demonstrated rapid learning and adaptability by mastering new technologies within a short timeframe, showcasing a strong commitment to personal and professional development during the internship at {company}.",
+        "Demonstrated rapid learning and adaptability by mastering new technologies within a short timeframe, showcasing a strong commitment to personal and professional development during the internship.",
         "Successfully passed challenging exams, validating a solid understanding of complex concepts and technologies, which contributed to the continuous improvement of skills and knowledge.",
-        "Developed a substantial project over the course of 5-6 months, exhibiting strong project management and coding skills.The finished project stands as a testament to improvement and quality worksmanship."
+        "Developed a substantial project over the course of ~5 months, exhibiting strong project management and coding skills.The finished project stands as a testament to improvement and quality worksmanship."
       ],
     location:'Remote',
     skills:['React JS', 'Typescript','Node JS', 'Mongoose', 'MongoDB','MUI','UX/UI' ],
