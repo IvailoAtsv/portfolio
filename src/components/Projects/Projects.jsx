@@ -1,4 +1,6 @@
 import uniqid from 'uniqid'
+import { useSpring, animated } from 'react-spring';
+import { useEffect, useRef, useState } from 'react';
 import { MainTitle } from "../ReusableComponents/Titles"
 import alcona from './thumbnails/alcona.png'
 import windyHills from './thumbnails/windyHills.png'
@@ -39,9 +41,43 @@ const projects = [
 ]
 
 export const Projects = () => {
+
+    const componentRef = useRef(null);
+    const [isVisible, setIsVisible] = useState(false);
+
+    const slideAnimation = useSpring({
+        from: {opacity: isVisible? '0': '1', transform: isVisible ? 'translateX(-200%)' : 'translateX(0%)' },
+    to: {opacity: isVisible? '1': '0', transform: isVisible ? 'translateX(0%)' : 'translateX(-200%)' },
+        config: { tension: 220, friction: 30 },
+        delay:300,
+      });
+
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setIsVisible(true);
+                console.log(isVisible);
+            }
+          }, 300);
+        }, { threshold: 0 });
+    
+        if (componentRef.current) {
+          observer.observe(componentRef.current);
+        }
+    
+        return () => {
+          if (componentRef.current) {
+            observer.unobserve(componentRef.current);
+          }
+        };
+
+      }, []);
+
+
     return (
-        <div className="min-h-[100vh] my-5 w-full flex justify-center items-start">
-            <div className="w-[90%] max-w-[1800px] flex flex-col justify-start items-start">
+        <div ref={componentRef} className="min-h-[100vh] my-5 w-full flex justify-center items-start">
+            <animated.div style={slideAnimation} className="w-[90%] max-w-[1800px] flex flex-col justify-start items-start">
 
                 <MainTitle classes='my-5' text="Some of my projects" />
                 <section className="w-full space-y-4 h-full">
@@ -52,7 +88,7 @@ export const Projects = () => {
                      src={project.src} 
                      video={project.video}/>)}
                 </section>
-            </div>
+            </animated.div>
         </div>
     )
 }

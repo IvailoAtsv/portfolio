@@ -11,8 +11,8 @@ export const Services = () => {
     const [isVisible, setIsVisible] = useState(false);
 
     const slideAnimation = useSpring({
-        from: {opacity: isVisible? '0': '1', transform: isVisible ? 'translateX(-200%)' : 'translateX(0%)' },
-    to: {opacity: isVisible? '1': '0', transform: isVisible ? 'translateX(0%)' : 'translateX(-200%)' },
+        from: {opacity: isVisible? '0': '1', transform: isVisible ? 'translateX(300%)' : 'translateX(0%)' },
+    to: {opacity: isVisible? '1': '0', transform: isVisible ? 'translateX(0%)' : 'translateX(300%)' },
         config: { tension: 220, friction: 30 },
         delay:300,
       });
