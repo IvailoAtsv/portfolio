@@ -22,7 +22,7 @@ export const Services = () => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               setIsVisible(true);
-                console.log(isVisible);
+
             }
           }, 300);
         }, { threshold: 0 });

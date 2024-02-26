@@ -9,11 +9,12 @@ import laptop from '../images/laptop.png'
 import { icons } from "../constants/skillIcons";
 import { saveAs } from 'file-saver'
 import CV from '../other/CV.pdf'
+import { handleProjectsScroll } from "../constants/scrollFunctions";
 
 export const buttonStyle = "bg-background self-start p-2 rounded-lg transition duration-300 text-md border-purple border-[2px] text-purple hover:bg-purple hover:border-background hover:text-black font-mono"
 
 
-export const Hero = () => {
+export const Hero = ({setSelectedSkill, selectedSkill}) => {
     const enterLeft = useSpring({ ...enterLeftAnimation });
     const enterRight = useSpring({ ...enterRightAnimation });
 
@@ -31,6 +32,7 @@ export const Hero = () => {
             }, 10000);
         }, 2000);
     }, [])
+
     return (
         <div id="home" className="w-full sm:mt-12 relative h-[95vh] overflow-x-hidden bg-background flex justify-center items-center">
             {showArrow && <FaArrowDown className={`animate-bounce text-lightGray absolute lg:bottom-[3%] bottom-[5%] mx-auto`} size={40} />}
@@ -47,12 +49,13 @@ export const Hero = () => {
 
                 </animated.div>
 
-                <animated.div style={enterRight} className="lg:w-[50%] w-[90%] relative max-w-[750px] overflow-hidden">
+                <animated.div style={enterRight} className="lg:w-[50%] w-[90%] relative max-w-[750px] overflow-hidden">                      
                     <img alt="Animation displaying all of my skills" src={laptop} className="w-[100%]" />
                     <div className='shadow-md absolute top-[2.3%] bg-black left-[13.5%] max-w-[600px] w-[73%] h-[65.5%] text-lightGray my-auto'>
-                        <Marquee direction="left" pauseOnHover={true} play={true} className="my-auto h-full" speed={80}>
-                            {icons.map((icon) => <SkillIcon key={uniqid()} icon={icon.icon} title={icon.title} />)}
+                        <Marquee direction="left" pauseOnHover={true} play={true} className="my-auto h-full" speed={80}>                
+                            {icons.map((icon) => <SkillIcon setSelectedSkill={setSelectedSkill} key={uniqid()} icon={icon.icon} title={icon.title} />)}
                         </Marquee>
+
                     </div>
                 </animated.div>
 
@@ -62,9 +65,12 @@ export const Hero = () => {
         </div>
     )
 }
-export const SkillIcon = ({ icon, title }) => {
+export const SkillIcon = ({ setSelectedSkill,icon, title, onClick }) => {
     return (
-        <div className="flex transition duration-300 flex-col justify-center items-center mx-3 text-lightGray hover:text-purple">
+        <div onClick={() => {
+            setSelectedSkill(title)
+            handleProjectsScroll()
+            }} className="flex transition duration-300 flex-col justify-center items-center mx-3 text-lightGray hover:text-purple">
             {icon}
             <p className="pt-2 text-lg font-mono ">{title}</p>
         </div>

@@ -8,12 +8,13 @@ export const icons = [
     { icon: <FaReact className={iconStyle} />, title: 'React JS' },
     { icon: <SiTypescript className={iconStyle} />, title: 'Typescript' },
     { icon: <FaNodeJs className={iconStyle} />, title: 'Node JS' },
-    { icon: <FaJsSquare className={iconStyle} />, title: 'JavaScript' },
+    { icon: <FaJsSquare className={iconStyle} />, title: 'Javascript' },
     { icon: <FaHtml5 className={iconStyle} />, title: 'HTML 5' },
-    { icon: <FaShopify className={iconStyle} />, title: 'Shopify' },
     { icon: <FaCss3Alt className={iconStyle} />, title: 'CSS 3' },
     { icon: <SiTailwindcss className={iconStyle} />, title: 'Tailwind CSS' },
     { icon: <BsBootstrapFill className={iconStyle} />, title: 'Bootstrap' },
     { icon: <FaSass className={iconStyle} />, title: 'SaSS' },
     { icon: <SiMui className={iconStyle} />, title: 'MUI' },
 ];
+
+export const skillOptions = ['React JS', 'Typescript','Node JS','Javascript','HTML 5', 'CSS 3','Tailwind CSS','Bootstrap','SaSS','MUI']

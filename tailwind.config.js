@@ -25,7 +25,7 @@ module.exports = {
         imgBg: 'rgba(255,255,255,0.2)'
       },
       animation: {
-        bounce: 'bounce 2s linear 500',
+        pulse2: 'pulse 2s linear 500',
         bounce2: 'bounce 1.5s linear infinite',
         bounce3: 'bounce 2.5s linear infinite',
       }

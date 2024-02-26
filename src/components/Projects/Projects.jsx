@@ -1,46 +1,11 @@
 import uniqid from 'uniqid'
 import { useSpring, animated } from 'react-spring';
 import { useEffect, useRef, useState } from 'react';
-import { MainTitle } from "../ReusableComponents/Titles"
-import alcona from './thumbnails/alcona.png'
-import windyHills from './thumbnails/windyHills.png'
-import ignis from './thumbnails/ignis.mov'
-import thisP from './thumbnails/this.png'
+import { AccentTitle, MainTitle } from "../ReusableComponents/Titles"
+import {projects} from '../../constants/projects'
 import { FaExternalLinkAlt } from "react-icons/fa";
 
-const projects = [
-    {
-        github:'https://github.com/IvailoAtsv/windyHills',
-        title: 'Windy Hills',
-        description: "This project marks my first dive into full-stack development. Learn about the winery's history, explore the wine selection, and see a testament to my growth in web development.",
-        src: windyHills,
-        skills: ['React', 'Javascript', 'HTML 5', 'CSS 3', 'Styled Components']
-    },
-    {
-        github:'https://github.com/IvailoAtsv/Ignis',
-        title: 'Ignis Portfolio',
-        description: "A Personal trainer's portfiolio, which improved my ability to work withing tight deadlines, and reaffirmed my fundamental knowledge.",
-        video:true,
-        src: ignis,
-        skills: ['Javascript', 'HTML 5', 'CSS 3']
-    },
-    {
-        github:'https://github.com/IvailoAtsv/alcona-solutions',
-        title: 'Alcona Solutions',
-        description: 'The Alcona project represents my initiation into building a website from the ground up. During the development process I learnt how to deal with difficult challenges and learn on my own.',
-        src: alcona,
-        skills: ['React', 'Javascript','React-Spring', 'HTML 5', 'Tailwind CSS']
-    },
-    {
-        src:thisP,
-        title:'And of course...',
-        description:"Don't forget to check out this portfiolio's github repo!",
-        github:'https://github.com/IvailoAtsv/portfolio',
-        skills:['React', 'Javascript','React-hook-form','React-Spring', 'HTML 5', 'Tailwind CSS']
-    }
-]
-
-export const Projects = () => {
+export const Projects = ({selectedSkill ,setSelectedSkill}) => {
 
     const componentRef = useRef(null);
     const [isVisible, setIsVisible] = useState(false);
@@ -57,7 +22,6 @@ export const Projects = () => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               setIsVisible(true);
-                console.log(isVisible);
             }
           }, 300);
         }, { threshold: 0 });
@@ -74,14 +38,30 @@ export const Projects = () => {
 
       }, []);
 
+      const allSkills = Array.from(
+        new Set(
+            projects.map(project => project.skills).flat()
+        )
+    );
 
     return (
         <div id='projects' ref={componentRef} className="min-h-[100vh] my-5 w-full flex justify-center items-start">
             <animated.div style={slideAnimation} className="w-[90%] max-w-[1800px] flex flex-col justify-start items-start">
 
                 <MainTitle classes='my-5' text="Some of my projects" />
+                <div className='flex justify-center items-start gap-2'><AccentTitle classes='mb-5' text="See where I've used: "/>
+                <select onChange={(e)=>setSelectedSkill(e.target.value)} className='bg-gray bg-opacity-10 text-white px-3 py-1'>
+                    {allSkills.map(skill => 
+                    <option 
+                    selected={selectedSkill == skill}
+                    value={skill}>
+                        {skill}
+                        </option>)}
+                </select>
+                </div>
                 <section className="w-full space-y-4 h-full">
                     {projects.map(project => <ProjectCard 
+                    selectedSkill={selectedSkill}
                     github={project.github}
                     skills={project.skills}
                      title={project.title} description={project.description} 
@@ -93,7 +73,7 @@ export const Projects = () => {
     )
 }
 
-const ProjectCard = ({github, src, title, description, video = false,skills }) => {
+const ProjectCard = ({github,selectedSkill, src, title, description, video = false,skills }) => {
     return (
         <div className="w-full rounded-xl p-4 flex flex-col lg:flex-row gap-4 justify-start items-start lg:h-[250px] bg-gray bg-opacity-10">
             {video
@@ -106,7 +86,8 @@ const ProjectCard = ({github, src, title, description, video = false,skills }) =
                 </h2>
                 <p className="text-xl mt-auto text-white">{description}</p>
                 <div className='flex mt-auto flex-wrap justify-start gap-1 items-start'>
-                    {skills.map(skill => <p key={`${uniqid()} - skill`} className="px-2 py-1 rounded-md text-white bg-background self-start inline-block">{skill}</p>)}
+                    {skills.map(skill => <p key={`${uniqid()} - skill`} className={`px-2 py-1 rounded-md text-white ${selectedSkill == skill
+                        ?'bg-purple':'bg-background'} self-start inline-block`}>{skill}</p>)}
                 </div>
             </div>
         </div>
