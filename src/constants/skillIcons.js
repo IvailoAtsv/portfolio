@@ -12,9 +12,7 @@ export const icons = [
     { icon: <FaHtml5 className={iconStyle} />, title: 'HTML 5' },
     { icon: <FaCss3Alt className={iconStyle} />, title: 'CSS 3' },
     { icon: <SiTailwindcss className={iconStyle} />, title: 'Tailwind CSS' },
-    { icon: <BsBootstrapFill className={iconStyle} />, title: 'Bootstrap' },
-    { icon: <FaSass className={iconStyle} />, title: 'SaSS' },
-    { icon: <SiMui className={iconStyle} />, title: 'MUI' },
+    // { icon: <BsBootstrapFill className={iconStyle} />, title: 'Bootstrap' },
+    // { icon: <FaSass className={iconStyle} />, title: 'SaSS' },
+    // { icon: <SiMui className={iconStyle} />, title: 'MUI' },
 ];
-
-export const skillOptions = ['React JS', 'Typescript','Node JS','Javascript','HTML 5', 'CSS 3','Tailwind CSS','Bootstrap','SaSS','MUI']

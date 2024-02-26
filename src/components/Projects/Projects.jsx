@@ -7,6 +7,20 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 
 export const Projects = ({selectedSkill ,setSelectedSkill}) => {
 
+    const [projectList, setProjectList] = useState(projects)
+
+    const sortBySkillUsage = (skill, projects) => {
+        const projectsUsingSkill = projects.filter(project => project.skills.includes(skill));
+        const projectsNotUsingSkill = projects.filter(project => !project.skills.includes(skill));
+    
+        return projectsUsingSkill.concat(projectsNotUsingSkill);
+       
+    };
+    useEffect(()=>{
+        setProjectList(sortBySkillUsage(selectedSkill, projectList))
+        
+    },[selectedSkill])
+
     const componentRef = useRef(null);
     const [isVisible, setIsVisible] = useState(false);
 
@@ -60,7 +74,7 @@ export const Projects = ({selectedSkill ,setSelectedSkill}) => {
                 </select>
                 </div>
                 <section className="w-full space-y-4 h-full">
-                    {projects.map(project => <ProjectCard 
+                    {projectList.map(project => <ProjectCard 
                     selectedSkill={selectedSkill}
                     github={project.github}
                     skills={project.skills}
