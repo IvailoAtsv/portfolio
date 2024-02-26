@@ -63,18 +63,20 @@ export const Projects = ({selectedSkill ,setSelectedSkill}) => {
             <animated.div style={slideAnimation} className="w-[90%] max-w-[1800px] flex flex-col justify-start items-start">
 
                 <MainTitle classes='my-5' text="Some of my projects" />
-                <div className='flex justify-center items-start gap-2'><AccentTitle classes='mb-5' text="See where I've used: "/>
-                <select onChange={(e)=>setSelectedSkill(e.target.value)} className='bg-gray bg-opacity-10 text-white px-3 py-1'>
+                <div className='w-full my-3'><AccentTitle classes='inline mb-5' text="Used: "/>
+                <select value={selectedSkill} onChange={(e)=>setSelectedSkill(e.target.value)} className='bg-gray inline bg-opacity-10 text-white p-1'>
+                    <option disabled></option>
                     {allSkills.map(skill => 
-                    <option 
-                    selected={selectedSkill == skill}
+                    <option
+                    key={uniqid()} 
                     value={skill}>
                         {skill}
                         </option>)}
                 </select>
                 </div>
                 <section className="w-full space-y-4 h-full">
-                    {projectList.map(project => <ProjectCard 
+                    {projectList.map(project => <ProjectCard
+                    key={uniqid()} 
                     selectedSkill={selectedSkill}
                     github={project.github}
                     skills={project.skills}
