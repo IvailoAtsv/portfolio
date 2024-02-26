@@ -45,7 +45,7 @@ export const Services = () => {
             <animated.div  style={isVisible ? slideAnimation: {}} className="h-auto w-full border-b-2 py-10 border-white flex flex-col justify-center items-center">
                 <div className="max-w-[1800px] gap-3 flex w-[90%] flex-col justify-center items-center h-full ">
                     <MainTitle text="Services" classes="mr-auto" />
-                    <h3 className="text-3xl mr-auto font-semibold text-white">My<span className="inline text-purple"> web wizardry</span> can enhance your online presence by...</h3>
+                    <h3 className="text-3xl mr-auto font-semibold text-white">My<span className="inline text-purple"> web wizardry</span> can create or enhance your online presence by...</h3>
                     <div className="h-[100%] mt-10 w-full flex justify-center lg:justify-evenly items-center flex-wrap">
                         <WizardCard src={design} title={`Working up elegant designs`}> </WizardCard>
                         <WizardCard src={create} title="Creating stunning websites"> </WizardCard>

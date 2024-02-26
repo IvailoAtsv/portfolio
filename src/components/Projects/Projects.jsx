@@ -76,7 +76,7 @@ export const Projects = () => {
 
 
     return (
-        <div ref={componentRef} className="min-h-[100vh] my-5 w-full flex justify-center items-start">
+        <div id='projects' ref={componentRef} className="min-h-[100vh] my-5 w-full flex justify-center items-start">
             <animated.div style={slideAnimation} className="w-[90%] max-w-[1800px] flex flex-col justify-start items-start">
 
                 <MainTitle classes='my-5' text="Some of my projects" />
