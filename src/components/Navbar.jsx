@@ -37,12 +37,12 @@ export function Navbar({}) {
                             setNav(false)
                         }} className={navBtnStyle}>Projects</button>
                     </li>
-                    <li className={liStyles}>
+                    {/* <li className={liStyles}>
                         <button onClick={()=>{
                             handleServicesScroll()
                             setNav(false)
                         }} className={navBtnStyle}>Services</button>
-                    </li>
+                    </li> */}
                     <li className={liStyles}>
                         <button onClick={()=>{
                             handleContactScroll()

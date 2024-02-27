@@ -16,7 +16,7 @@ function App() {
       <Hero selectedSkill={selectedSkill} setSelectedSkill={setSelectedSkill}/>
       <Experience />
       <Projects selectedSkill={selectedSkill} setSelectedSkill={setSelectedSkill}/>
-      <Services />
+      {/* <Services /> */}
       <ContactMe />
     </div>
   );
