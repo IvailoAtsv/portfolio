@@ -55,7 +55,7 @@ export const ContactMe = () => {
         const observer = new IntersectionObserver((entries) => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
-              setIsVisible(prev => prev = true);
+              setIsVisible(true);
 
             }
           }, 300);
