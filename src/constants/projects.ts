@@ -31,6 +31,6 @@ export const projects = [
         title:'And of course...',
         description:"Don't forget to check out this portfiolio's github repo!",
         github:'https://github.com/IvailoAtsv/portfolio',
-        skills:['React JS', 'Javascript','React-hook-form','React-Spring', 'HTML 5', 'Tailwind CSS']
+        skills:['React JS', 'Typescript','React-hook-form','React-Spring', 'HTML 5', 'Tailwind CSS']
     }
 ]

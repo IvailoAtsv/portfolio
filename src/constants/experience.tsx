@@ -2,11 +2,11 @@ import { IoSchool } from "react-icons/io5";
 import { RiHomeOfficeFill } from "react-icons/ri";
 
 
-export const mentorship =[ 'Problem solving', 'Programming basics', 'Data structures', 'Best Practices','Javascript', 'HTML 5', 'CSS 3']
+export const mentorship =[ 'Problem solving', 'Programming basics', 'Data structures', 'Best Practices','Javascript', 'HTML 5', 'CSS 3',]
 
 export const educationCards = [
     {
-        icon: <IoSchool/>,
+        icon: <IoSchool/> ,
         school:'Softuni',
         date:'06-2022 - 08-2023',
         descriptionPoints:[

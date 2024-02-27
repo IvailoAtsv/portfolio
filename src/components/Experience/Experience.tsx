@@ -78,6 +78,6 @@ export const Experience = () => {
   )
 }
 
-const JourneyTitle = ({text}) => {
+const JourneyTitle = ({text}:{ text: string; }) => {
  return  <h2 className='my-5 flex items-center justify-start gap-2 text-white text-h3clamp'><VscDebugBreakpointLogUnverified />{text}</h2>
 }
