@@ -75,7 +75,7 @@ export const ContactMe = () => {
     return (
         <div id='contact' ref={componentRef} className="h-auto relative flex flex-col justify-center items-center w-full">
             <animated.section  style={slideAnimation} className=" py-5 pl-1 max-w-[1800px] w-[90%]">
-                <AccentTitle text={"Like what you're seeing?"} classes="mr-auto" />
+                <AccentTitle text={"Like what you see?"} classes="mr-auto" />
             </animated.section>
             <div className="max-w-[1800px] min-h-[90vh] lg:min-h-[45vh] py-4 relative w-[90%] justify-between flex flex-col lg:flex-row items-start">
                 {sent 

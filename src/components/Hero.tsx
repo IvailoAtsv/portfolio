@@ -81,7 +81,7 @@ export const SkillIcon:React.FC<SkillIconProps> = ({ setSelectedSkill,icon, titl
         <div onClick={() => {
             setSelectedSkill(title)
             handleProjectsScroll()
-            }} className="flex transition duration-300 flex-col justify-center items-center mx-3 text-lightGray hover:text-purple">
+            }} className="flex transition cursor-pointer duration-300 flex-col justify-center items-center mx-3 text-lightGray hover:text-purple">
             {icon}
             <p className="pt-2 text-lg font-mono ">{title}</p>
         </div>
