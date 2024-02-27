@@ -58,7 +58,7 @@ export const ContactMe = () => {
               setIsVisible(true);
 
             }
-          }, 300);
+          });
         }, { threshold: 0 });
     
         if (componentRef.current) {
