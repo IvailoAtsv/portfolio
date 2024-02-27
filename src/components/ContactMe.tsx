@@ -56,7 +56,6 @@ export const ContactMe = () => {
           entries.forEach((entry) => {
             if (entry.isIntersecting) {
               setIsVisible(true);
-
             }
           });
         }, { threshold: 0 });
@@ -85,19 +84,20 @@ export const ContactMe = () => {
                 </div>)
                 :<animated.form onSubmit={handleSubmit(onSubmit)} style={slideAnimation} className="flex-2  w-full flex p-4 flex-col border-white lg:max-w-[42%] justify-evenly items-start rounded-xl">
                     <SecondaryTitle text={'Get in touch now'} classes='mb-5'/>
-                    {errors.name 
-                    ?<label className={labelErrorStyles}>{errors?.name?.message?.toString()}</label> 
+                    {errors.name && errors.name.message !== undefined
+                    ?<label className={labelErrorStyles}>{errors.name.message.toString()}</label> 
                     :<label className={labelStyles}>What's your name?</label>
                     }
                     <input {...register("name", {required:'Please enter a name', minLength:3})} type="text" className={inputStyles} />
-                    {errors.email ?
-                    <label className={labelErrorStyles}> {errors.email.message?.toString()}</label> 
+                    {errors.email && errors.email.message !== undefined ?
+                    <label className={labelErrorStyles}> {errors.email.message.toString()}</label> 
                     :<label className={labelStyles}>Your favourite email?</label>
                     }
                     <input type="text" {...register("email",{required:'Please enter a valid email',pattern:
                             /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,})} className={inputStyles} />
-                {errors.message ?
-                    <label className={labelErrorStyles}> {errors.message.message?.toString()}</label> 
+                {errors.message && errors.message.message !== undefined
+                ?
+                    <label className={labelErrorStyles}> {errors.message.message.toString()}</label> 
                     :<label className={labelStyles}>What's on your mind?</label>
                     }
                     <input type="text" {...register("message", {required:'Please leave a message'})} className={inputStyles} />
