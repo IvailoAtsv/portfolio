@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { Dispatch, ReactNode, SetStateAction, useEffect, useState } from "react";
 import uniqid from 'uniqid'
 import { FaArrowDown } from "react-icons/fa"
 import Marquee from 'react-fast-marquee';
@@ -11,10 +11,15 @@ import { saveAs } from 'file-saver'
 import CV from '../other/CV.pdf'
 import { handleProjectsScroll } from "../constants/scrollFunctions";
 
+interface HeroProps{
+    selectedSkill: string;
+    setSelectedSkill: Dispatch<SetStateAction<string>>
+}
+
 export const buttonStyle = "bg-background self-start p-2 rounded-lg transition duration-300 text-md border-purple border-[2px] text-purple hover:bg-purple hover:border-background hover:text-black font-mono"
 
 
-export const Hero = ({setSelectedSkill, selectedSkill}) => {
+export const Hero:React.FC<HeroProps> = ({setSelectedSkill, selectedSkill}) => {
     const enterLeft = useSpring({ ...enterLeftAnimation });
     const enterRight = useSpring({ ...enterRightAnimation });
 
@@ -65,7 +70,13 @@ export const Hero = ({setSelectedSkill, selectedSkill}) => {
         </div>
     )
 }
-export const SkillIcon = ({ setSelectedSkill,icon, title, onClick }) => {
+interface SkillIconProps{
+    setSelectedSkill: Dispatch<SetStateAction<string>>;
+    icon:ReactNode;
+    title:string;
+
+}
+export const SkillIcon:React.FC<SkillIconProps> = ({ setSelectedSkill,icon, title }) => {
     return (
         <div onClick={() => {
             setSelectedSkill(title)

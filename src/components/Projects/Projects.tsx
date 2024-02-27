@@ -1,15 +1,29 @@
 import uniqid from 'uniqid'
 import { useSpring, animated } from 'react-spring';
-import { useEffect, useRef, useState } from 'react';
+import { Dispatch, SetStateAction, useEffect, useRef, useState } from 'react';
 import { AccentTitle, MainTitle } from "../ReusableComponents/Titles"
 import {projects} from '../../constants/projects'
 import { FaExternalLinkAlt } from "react-icons/fa";
 
-export const Projects = ({selectedSkill ,setSelectedSkill}) => {
+interface ProjectsProps{
+    selectedSkill: string ;
+    setSelectedSkill:Dispatch<SetStateAction<string>>;
+}
 
-    const [projectList, setProjectList] = useState(projects)
+interface Project {
+    github: string;
+    title: string;
+    description: string;
+    video?: boolean;
+    src: string;
+    skills: string[];
+  }
 
-    const sortBySkillUsage = (skill, projects) => {
+export const Projects:React.FC<ProjectsProps> = ({selectedSkill ,setSelectedSkill}) => {
+
+    const [projectList, setProjectList] = useState<Project[]>(projects)
+
+    const sortBySkillUsage = (skill:string, projects :Project[]) => {
         const projectsUsingSkill = projects.filter(project => project.skills.includes(skill));
         const projectsNotUsingSkill = projects.filter(project => !project.skills.includes(skill));
     
@@ -89,11 +103,15 @@ export const Projects = ({selectedSkill ,setSelectedSkill}) => {
     )
 }
 
-const ProjectCard = ({github,selectedSkill, src, title, description, video = false,skills }) => {
+interface ProjectCardProps extends Project{
+selectedSkill:string;
+}
+
+const ProjectCard:React.FC<ProjectCardProps> = ({github,selectedSkill, src, title, description, video = false,skills }) => {
     return (
         <div className="w-full rounded-xl p-4 flex flex-col lg:flex-row gap-4 justify-start items-start lg:h-[250px] bg-gray bg-opacity-10">
             {video
-            ?<video muted autoPlay={true} loop={true} src={src} className="lg:h-[100%]" alt="Windy Hills"/> 
+            ?<video muted autoPlay={true} loop={true} src={src} className="lg:h-[100%]"/> 
             :<img src={src} className="lg:h-[100%]" alt="Windy Hills" />}
             <div className="flex relative w-full gap-3 lg:gap-6 h-full flex-col justify-evenly items-start">
                 <a href={github} target='_blank' className='absolute flex items-center justify-center gap-2  top-[3%] text-purple right-[1%] cursor-pointer animate-pulse'>Github: <FaExternalLinkAlt size={12} /></a>

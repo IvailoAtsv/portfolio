@@ -2,8 +2,17 @@ import { VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import uniqid from 'uniqid'
 import {theme} from './ExperienceElement'
 import { skillStyles } from './Experience';
+import { ReactNode } from 'react';
 
-export const EducationElement =({icon, school, descriptionPoints, date, skills})=>{
+interface EducationElementProps{
+  icon:ReactNode;
+  school:string;
+  descriptionPoints:string[];
+  date:string;
+  skills: string[]
+}
+
+export const EducationElement:React.FC<EducationElementProps> =({icon, school, descriptionPoints, date, skills})=>{
     return (
     <VerticalTimelineElement
     date={date}

@@ -5,9 +5,10 @@ import { IoMdClose } from "react-icons/io";
 import { IoMenu } from "react-icons/io5";
 import { enterLeftAnimation } from "../constants/animations";
 
+
 export function Navbar({}) {
 
-    const [nav, setNav] = useState(false)
+    const [nav, setNav] = useState<boolean>(false)
   
     const enterLeft = useSpring({ ...enterLeftAnimation });
 

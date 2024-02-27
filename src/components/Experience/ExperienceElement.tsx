@@ -1,6 +1,7 @@
 import { VerticalTimelineElement }  from 'react-vertical-timeline-component';
 import uniqid from 'uniqid'
 import { skillStyles } from './Experience';
+import { ReactNode } from 'react';
 
 export const theme = {
     background: '#00022e',
@@ -12,7 +13,16 @@ export const theme = {
     imgBg: 'rgba(255,255,255,0.2)'
   }
 
-export const ExperienceElement =({icon, jobTitle, descriptionPoints, date, company, skills})=>{
+interface ExperienceElementProps{
+  icon:ReactNode;
+  jobTitle:string;
+  descriptionPoints: string[];
+  date:string;
+  company:string;
+  skills:string[]
+}
+
+export const ExperienceElement:React.FC<ExperienceElementProps> =({icon, jobTitle, descriptionPoints, date, company, skills})=>{
     return (<VerticalTimelineElement
     date={date}
     dateClassName='xl:text-white mx-2 md:m:0'

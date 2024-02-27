@@ -1,8 +1,8 @@
-import { useEffect, useRef, useState } from 'react';
+import { ReactNode, useEffect, useRef, useState } from 'react';
 import { useSpring, animated } from 'react-spring';
-import { useForm } from "react-hook-form"
+import { FieldValues, SubmitHandler, useForm } from "react-hook-form"
 import { AccentTitle, SecondaryTitle } from "./ReusableComponents/Titles"
-import { buttonStyle } from '../components/Hero'
+import { buttonStyle } from './Hero'
 import { links } from '../constants/links'
 import emailjs from '@emailjs/browser'
 import { FaHeart } from "react-icons/fa";
@@ -11,6 +11,13 @@ import Loader from 'react-loaders'
 const inputStyles = "focus:outline-none w-[100%] lg:w-[95%] px-2 py-3 mb-5 text-2xl rounded-md text-white bg-gray bg-opacity-10  border-b-2 border-purple"
 const labelStyles = "font-mono mb-1 text-lightGray text-2xl"
 const labelErrorStyles = "font-mono mb-1 text-red-600 text-2xl"
+
+interface LinkProps{
+  href:string;
+  text:string
+  icon:ReactNode;
+}
+
 export const ContactMe = () => {
 
   const [sent,setSent] = useState(false)
@@ -21,14 +28,16 @@ export const ContactMe = () => {
         watch,
         formState: { errors },
       } = useForm()
-      const onSubmit =async (data) => {
+      const onSubmit:SubmitHandler<FieldValues> = async (data) => {
         setLoading(true)
         const params = {
           name:data.name,
           email:data.email,
           message:data.message
         }
-        await emailjs.send(process.env.REACT_APP_SERVICE_ID,process.env.REACT_APP_TEMPLATE,params, process.env.REACT_APP_PUBLIC)
+        if(process.env.REACT_APP_SERVICE_ID !== undefined && process.env.REACT_APP_TEMPLATE!== undefined && process.env.REACT_APP_PUBLIC !== undefined){
+          await emailjs.send(process.env.REACT_APP_SERVICE_ID,process.env.REACT_APP_TEMPLATE,params, process.env.REACT_APP_PUBLIC)
+        }
         setLoading(false)
         setSent(true)
       }
@@ -77,18 +86,18 @@ export const ContactMe = () => {
                 :<animated.form onSubmit={handleSubmit(onSubmit)} style={slideAnimation} className="flex-2  w-full flex p-4 flex-col border-white lg:max-w-[42%] justify-evenly items-start rounded-xl">
                     <SecondaryTitle text={'Get in touch now'} classes='mb-5'/>
                     {errors.name ?
-                    <label className={labelErrorStyles}> {errors.name.message}</label> 
+                    <label className={labelErrorStyles}>{errors?.name?.message?.toString()}</label> 
                     :<label className={labelStyles}>What's your name?</label>
                     }
                     <input {...register("name", {required:'Please enter a name', minLength:3})} type="text" className={inputStyles} />
                     {errors.email ?
-                    <label className={labelErrorStyles}> {errors.email.message}</label> 
+                    <label className={labelErrorStyles}> {errors.email.message?.toString()}</label> 
                     :<label className={labelStyles}>Your favourite email?</label>
                     }
                     <input type="text" {...register("email",{required:'Please enter a valid email',pattern:
                             /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,})} className={inputStyles} />
                 {errors.message ?
-                    <label className={labelErrorStyles}> {errors.message.message}</label> 
+                    <label className={labelErrorStyles}> {errors.message.message?.toString()}</label> 
                     :<label className={labelStyles}>What's on your mind?</label>
                     }
                     <input type="text" {...register("message", {required:'Please leave a message'})} className={inputStyles} />
@@ -100,7 +109,7 @@ export const ContactMe = () => {
                 <animated.section style={slideAnimation} className="text-white p-4  border-white flex-2 w-full lg:max-w-[42%] rounded-xl flex flex-col justify-between items-start">
                     <h1 className="text-h2clamp whitespace-nowrap mb-5 font-semibold"> Find me on...</h1>
                     <div className=" text-3xl flex flex-col rounded-xl flex-wrap items-start justify-evenly h-full text-lightGray  w-full my-2 md:my-0">
-                       {links.map(link => <LinkPair key={link.text} text={link.text} href={link.href} button={link.button} icon={link.icon} />)}
+                       {links.map(link => <LinkPair key={link.text} text={link.text} href={link.href} icon={link.icon} />)}
                     </div>
                 </animated.section>
             </div>
@@ -110,7 +119,7 @@ export const ContactMe = () => {
 
 }
 
-const LinkPair = ({href, text, icon}) => {
+const LinkPair:React.FC<LinkProps> = ({href, text, icon}) => {
     return (
         <div
         className="flex bg-gray bg-opacity-10 gap-2 rounded-lg text-2xl p-[10px] justify-start w-full items-center mb-5">

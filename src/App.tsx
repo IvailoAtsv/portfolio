@@ -1,9 +1,9 @@
+import React from "react";
 import { useRef, useState } from "react";
 import { ContactMe } from "./components/ContactMe";
 import { Experience } from "./components/Experience/Experience";
 import { Hero } from "./components/Hero";
 import { Navbar } from "./components/Navbar";
-import { Services } from "./components/Services/Services";
 import { Projects } from "./components/Projects/Projects";
 
 function App() {
@@ -16,7 +16,6 @@ function App() {
       <Hero selectedSkill={selectedSkill} setSelectedSkill={setSelectedSkill}/>
       <Experience />
       <Projects selectedSkill={selectedSkill} setSelectedSkill={setSelectedSkill}/>
-      {/* <Services /> */}
       <ContactMe />
     </div>
   );
