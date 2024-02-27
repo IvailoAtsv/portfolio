@@ -85,8 +85,8 @@ export const ContactMe = () => {
                 </div>)
                 :<animated.form onSubmit={handleSubmit(onSubmit)} style={slideAnimation} className="flex-2  w-full flex p-4 flex-col border-white lg:max-w-[42%] justify-evenly items-start rounded-xl">
                     <SecondaryTitle text={'Get in touch now'} classes='mb-5'/>
-                    {errors.name ?
-                    <label className={labelErrorStyles}>{errors?.name?.message?.toString()}</label> 
+                    {errors.name 
+                    ?<label className={labelErrorStyles}>{errors?.name?.message?.toString()}</label> 
                     :<label className={labelStyles}>What's your name?</label>
                     }
                     <input {...register("name", {required:'Please enter a name', minLength:3})} type="text" className={inputStyles} />
