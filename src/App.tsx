@@ -5,22 +5,22 @@ import { Experience } from "./components/Experience/Experience";
 import { Hero } from "./components/Hero";
 import { Navbar } from "./components/Navbar";
 import { Projects } from "./components/Projects/Projects";
-import { Analytics } from "@vercel/analytics/react"
-import { Popup } from "./components/Popup";
+import { Analytics } from "@vercel/analytics/react";
+import { SpeedInsights } from "@vercel/speed-insights/react";
 function App() {
-
-
-
-  const [selectedSkill, setSelectedSkill] = useState('')
+  const [selectedSkill, setSelectedSkill] = useState("");
 
   return (
     <div className="w-full bg-background relative overflow-x-hidden min-h-screen flex flex-col justify-start items-center">
-      <Navbar/>
-      {/* <Popup /> analytics popup */}
+      <Navbar />
+      <SpeedInsights />
       <Analytics />
-      <Hero selectedSkill={selectedSkill} setSelectedSkill={setSelectedSkill}/>
+      <Hero selectedSkill={selectedSkill} setSelectedSkill={setSelectedSkill} />
       <Experience />
-      <Projects selectedSkill={selectedSkill} setSelectedSkill={setSelectedSkill}/>
+      <Projects
+        selectedSkill={selectedSkill}
+        setSelectedSkill={setSelectedSkill}
+      />
       <ContactMe />
     </div>
   );
