@@ -57,7 +57,7 @@ export const Hero:React.FC<HeroProps> = ({setSelectedSkill, selectedSkill}) => {
                 <animated.div style={enterRight} className="lg:w-[50%] w-[90%] relative max-w-[750px] overflow-hidden">                      
                     <img alt="Animation displaying all of my skills" src={laptop} className="w-[100%]" />
                     <div className='shadow-md absolute top-[2.3%] bg-black left-[13.5%] max-w-[600px] w-[73%] h-[65.5%] text-lightGray my-auto'>
-                        <p className="absolute top-0 left-0 text-purple p-1 animate-pulse">click on a skill...</p>
+                        <p className="absolute top-0 left-0 text-sm text-purple p-1 animate-pulse">click on a skill...</p>
                         <Marquee direction="left" pauseOnHover={true} play={true} className="my-auto h-full" speed={80}>                
                             {icons.map((icon) => <SkillIcon setSelectedSkill={setSelectedSkill} key={uniqid()} icon={icon.icon} title={icon.title} />)}
                         </Marquee>
@@ -77,7 +77,7 @@ interface SkillIconProps{
     title:string;
 
 }
-export const SkillIcon:React.FC<SkillIconProps> = ({ setSelectedSkill,icon, title }) => {
+export const SkillIcon:React.FC<SkillIconProps> = ({ setSelectedSkill, icon, title }) => {
     return (
         <div onClick={() => {
             setSelectedSkill(title)

@@ -1,9 +1,9 @@
-import uniqid from "uniqid";
-import { useSpring, animated } from "react-spring";
 import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
+import { useSpring, animated } from "react-spring";
+import { FaExternalLinkAlt } from "react-icons/fa";
+import uniqid from "uniqid";
 import { AccentTitle, MainTitle } from "../ReusableComponents/Titles";
 import { projects } from "../../constants/projects";
-import { FaExternalLinkAlt } from "react-icons/fa";
 
 interface ProjectsProps {
   selectedSkill: string;
@@ -36,7 +36,9 @@ export const Projects: React.FC<ProjectsProps> = ({
     return projectsUsingSkill.concat(projectsNotUsingSkill);
   };
   useEffect(() => {
-    setProjectList(sortBySkillUsage(selectedSkill, projectList));
+    if(selectedSkill){
+      setProjectList(sortBySkillUsage(selectedSkill, projectList));
+    }
   }, [selectedSkill]);
 
   const componentRef = useRef(null);
@@ -51,18 +53,20 @@ export const Projects: React.FC<ProjectsProps> = ({
       opacity: isVisible ? "1" : "0",
       transform: isVisible ? "translateX(0%)" : "translateX(-200%)",
     },
-    config: { tension: 220, friction: 30 },
-    delay: 300,
+    config: { 
+      mass: 1,
+      friction: 30,
+      tension: 220,
+     },
+    delay: 100,
   });
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-          }
-        }, 300);
+          setIsVisible(!!entry.isIntersecting)
+        },100);
       },
       { threshold: 0 }
     );

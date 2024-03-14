@@ -24,7 +24,7 @@ export const projects = [
         title: 'Alcona Solutions',
         description: 'The Alcona project represents my initiation into building a website from the ground up. During the development process I learnt how to deal with difficult challenges and learn on my own.',
         src: alcona,
-        skills: ['React JS', 'Node JS','Javascript','React-Spring', 'HTML 5', 'Tailwind CSS']
+        skills: ['React JS','Javascript','React-Spring', 'HTML 5', 'Tailwind CSS']
     },
     {
         src:thisP,

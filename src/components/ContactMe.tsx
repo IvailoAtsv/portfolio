@@ -36,9 +36,9 @@ export const ContactMe = () => {
       message: data.message,
     };
     if (
-      process.env.REACT_APP_SERVICE_ID !== undefined &&
-      process.env.REACT_APP_TEMPLATE !== undefined &&
-      process.env.REACT_APP_PUBLIC !== undefined
+      process.env.REACT_APP_SERVICE_ID &&
+      process.env.REACT_APP_TEMPLATE &&
+      process.env.REACT_APP_PUBLIC
     ) {
       await emailjs.send(
         process.env.REACT_APP_SERVICE_ID,
@@ -70,9 +70,7 @@ export const ContactMe = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setIsVisible(true);
-          }
+          setIsVisible(!!entry.isIntersecting)
         });
       },
       { threshold: 0 }
