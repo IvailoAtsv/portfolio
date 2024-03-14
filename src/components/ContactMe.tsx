@@ -1,15 +1,15 @@
 import { ReactNode, useEffect, useRef, useState } from "react";
 import { useSpring, animated } from "react-spring";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
+import emailjs from "@emailjs/browser";
+import { RxInput } from "react-icons/rx";
 import { AccentTitle, SecondaryTitle } from "./ReusableComponents/Titles";
 import { buttonStyle } from "./Hero";
 import { links } from "../constants/links";
-import emailjs from "@emailjs/browser";
 import { FaHeart } from "react-icons/fa";
-import Loader from "react-loaders";
 
 const inputStyles =
-  "focus:outline-none w-[100%] lg:w-[95%] px-2 py-3 mb-5 text-2xl rounded-md text-white bg-gray bg-opacity-10  border-b-2 border-purple";
+  "focus:outline-none w-[100%] lg:w-[95%] px-2 py-3 mb-5 text-2xl rounded-md text-white bg-gray bg-opacity-10  border-purple";
 const labelStyles = "font-mono mb-1 text-lightGray text-2xl";
 const labelErrorStyles = "font-mono mb-1 text-red-600 text-2xl";
 
@@ -29,6 +29,11 @@ export const ContactMe = () => {
     formState: { errors },
   } = useForm();
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
+    // honeypot, bot prevention
+    if(data.hnyPot){
+      return
+    }
+    setSent(true)
     setLoading(true);
     const params = {
       name: data.name,
@@ -40,16 +45,20 @@ export const ContactMe = () => {
       process.env.REACT_APP_TEMPLATE &&
       process.env.REACT_APP_PUBLIC
     ) {
-      await emailjs.send(
-        process.env.REACT_APP_SERVICE_ID,
-        process.env.REACT_APP_TEMPLATE,
-        params,
-        process.env.REACT_APP_PUBLIC
-      );
-    }
-    setLoading(false);
-    setSent(true);
+      try {
+        await emailjs.send(
+          process.env.REACT_APP_SERVICE_ID,
+          process.env.REACT_APP_TEMPLATE,
+          params,
+          process.env.REACT_APP_PUBLIC
+        ).then(() => {
+          setLoading(false);
+        });
+      } catch (error) {
+        setLoading(false); 
+        }
   };
+}
   // dear god, these animations are not worth the effort
   const componentRef = useRef(null);
   const [isVisible, setIsVisible] = useState(false);
@@ -104,7 +113,7 @@ export const ContactMe = () => {
           <div className="flex-2 w-full flex p-4 flex-col lg:max-w-[42%] justify-center items-start rounded-xl">
             {loading ? (
               <h2 className="text-4xl text-white font-semibold animate-pulse">
-                Loading...
+                Sending...
               </h2>
             ) : (
               <h2 className="text-4xl text-white font-semibold">
@@ -118,7 +127,7 @@ export const ContactMe = () => {
           <animated.form
             onSubmit={handleSubmit(onSubmit)}
             style={slideAnimation}
-            className="flex-2  w-full flex p-4 flex-col border-white lg:max-w-[42%] justify-evenly items-start rounded-xl"
+            className="flex-2 w-full flex p-4 flex-col border-white lg:max-w-[42%] justify-evenly items-start rounded-xl"
           >
             <SecondaryTitle text={"Get in touch now"} classes="mb-5" />
             {errors.name && errors.name.message !== undefined ? (
@@ -136,6 +145,7 @@ export const ContactMe = () => {
               type="text"
               className={inputStyles}
             />
+            <input type="text" className="hidden" {...register('hnyPot')} />
             {errors.email && errors.email.message !== undefined ? (
               <label className={labelErrorStyles}>
                 {" "}
