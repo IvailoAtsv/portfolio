@@ -14,7 +14,7 @@ export const projects = [
     {
         github:'https://github.com/IvailoAtsv/Ignis',
         title: 'Ignis Portfolio',
-        description: "A Personal trainer's portfiolio, which improved my ability to work withing tight deadlines, and reaffirmed my fundamental knowledge.",
+        description: "A Personal trainer's portfiolio, which improved my ability to work within tight deadlines, and reaffirmed my fundamental knowledge.",
         video:true,
         src: ignis,
         skills: ['Javascript', 'HTML 5', 'CSS 3']

@@ -65,7 +65,8 @@ export const Projects: React.FC<ProjectsProps> = ({
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          setIsVisible(!!entry.isIntersecting)
+          if(entry.isIntersecting) setIsVisible(!!entry.isIntersecting)
+
         },100);
       },
       { threshold: 0 }
