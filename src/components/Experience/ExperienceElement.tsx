@@ -18,11 +18,10 @@ interface ExperienceElementProps{
   jobTitle:string;
   descriptionPoints: string[];
   date:string;
-  company:string;
   skills:string[]
 }
 
-export const ExperienceElement:React.FC<ExperienceElementProps> =({icon, jobTitle, descriptionPoints, date, company, skills})=>{
+export const ExperienceElement:React.FC<ExperienceElementProps> =({icon, jobTitle, descriptionPoints, date, skills})=>{
     return (<VerticalTimelineElement
     date={date}
     dateClassName='xl:text-white mx-2 md:m:0'
@@ -32,7 +31,6 @@ export const ExperienceElement:React.FC<ExperienceElementProps> =({icon, jobTitl
      icon={icon}
    >
      <h2 className="text-lg font-bold">{jobTitle}</h2>
-     <h6 className="text-sm">for: {company}</h6>
      
      <ul className='p-3'>{descriptionPoints.map(point => <li className='my-1 text-sm list-disc' key={uniqid()}>{point}</li>)}</ul>
  

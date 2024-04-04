@@ -40,7 +40,6 @@ export const Experience = () => {
               descriptionPoints={job.descriptionPoints}
               skills={job.skills}
               date={job.date}
-              company={job.company}
               icon={job.icon}
             />)}
 

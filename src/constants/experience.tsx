@@ -24,7 +24,6 @@ export const experienceCards = [
     {
     jobTitle:'Fullstack | Freelance',
     date:'06-2023',
-    company:'Windy Hills',
     descriptionPoints:["Crafted a design tailored to the client's specific requirements and preferences, ensuring alignment with their vision and objectives.","Developed a comprehensive full-stack application in accordance with the provided design specifications.","Implemented an improved workflow, making it simpler for employees to manage the website"],
     skills:['React JS', 'Node JS', 'Mongoose', 'MongoDB','Styled Components','UX/UI' ],
     icon:<RiHomeOfficeFill/>
@@ -32,7 +31,6 @@ export const experienceCards = [
     {
     jobTitle:'Front-end | Freelance',
     date:'08-2023',
-    company:'personal trainer at BRESS Gym, Netherlands',
     descriptionPoints:[
         "Crafted a modern and inviting website design, tailored to enhance the online presence of a per sonal trainer, ensuring an appealing and user-friendly experience for visitors.",
         "Created an intuitive platform that showcases the trainer's services and encourages client engagement.",
@@ -45,7 +43,6 @@ export const experienceCards = [
     {
     jobTitle:'Front-end | Freelance',
     date:'10-2023',
-    company:'Alcona Solutions',
     descriptionPoints:[
         "Crafted an elegant and user-friendly design of an online platform showcasing a diverse range of high-quality WPC fences.",
         "Implemented an online shopping experience, enabling customers to effortlessly browse, select, and purchase their preferred fences.",
@@ -55,10 +52,10 @@ export const experienceCards = [
     skills:['UX/UI','React JS', 'Node JS', 'Mongoose', 'MongoDB','Tailwind CSS' ],
     icon:<RiHomeOfficeFill/>
 },
+
     {
     jobTitle:'Full Stack | Internship',
     date:'11-2023',
-    company:'Vention',
     descriptionPoints:[
         "Demonstrated rapid learning and adaptability by mastering new technologies within a short timeframe, showcasing a strong commitment to personal and professional development during the internship.",
         "Successfully passed challenging exams, validating a solid understanding of complex concepts and technologies, which contributed to the continuous improvement of skills and knowledge.",
@@ -67,5 +64,17 @@ export const experienceCards = [
     location:'Remote',
     skills:['React JS', 'Typescript','Node JS', 'Mongoose', 'MongoDB','MUI','UX/UI' ],
     icon:<RiHomeOfficeFill/>
+},
+{
+  jobTitle:'Front-end | Freelance',
+  date:'02-2024',
+  descriptionPoints:[
+    "Developed a sleek and efficient website for a mechanic/car tuner, providing a seamless online presence for the business.",
+    "Implemented essential features such as service listings, appointment scheduling, and contact forms to enhance user experience and streamline communication.",
+    "Achieved rapid development of the entire website within just under 5 business days of intensive work hours, meeting tight deadlines without compromising quality.",
+],
+  location:'Remote',
+  skills:['UX/UI','React JS','Typescript' ,'Tailwind CSS' ],
+  icon:<RiHomeOfficeFill/>
 },
 ]

@@ -156,17 +156,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           className="lg:h-[100%]"
         />
       ) : (
-        <img src={src} className="lg:h-[100%]" alt="Windy Hills" />
+        <img src={src} className="lg:h-[100%]" alt="Project front-page image" />
       )}
       <div className="flex relative w-full gap-3 lg:gap-6 h-full flex-col justify-evenly items-start">
         <a
           href={github}
           target="_blank"
-          className="absolute flex items-center justify-center gap-2  top-[3%] text-purple right-[1%] cursor-pointer animate-pulse"
+          className="absolute flex items-center justify-center gap-2  top-[1%] text-purple right-[1%] cursor-pointer animate-pulse"
         >
           Github: <FaExternalLinkAlt size={12} />
         </a>
-        <h2 className="text-white text-3xl">{title}</h2>
+        <h2 className="text-white text-xl md:text-3xl">{title}</h2>
         <p className="text-xl mt-auto text-white">{description}</p>
         <div className="flex mt-auto flex-wrap justify-start gap-1 items-start">
           {skills.map((skill) => (
