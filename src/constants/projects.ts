@@ -1,7 +1,7 @@
-import alcona from '../images/thumbnails/alcona.png'
-import windyHills from '../images/thumbnails/windyHills.png'
-import ignis from '../images/thumbnails/ignis.mov'
-import thisP from '../images/thumbnails/this.png'
+import alcona from '../images/thumbnails/alcona.webp'
+import windyHills from '../images/thumbnails/windyHills.webp'
+import ignis from '../images/thumbnails/ignis.mp4'
+import thisP from '../images/thumbnails/this.webp'
 
 export const projects = [
     {

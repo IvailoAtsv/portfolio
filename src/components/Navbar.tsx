@@ -16,7 +16,7 @@ export function Navbar({}) {
     const liStyles = `text-sm whitespace-nowrap block flex justify-center items-center hover:text-purple my-3 md:m:0 'w-[90%] md:max-w-[150px] text-xl sm:text-sm rounded`
     return (
 
-        <animated.nav style={enterLeft} className={`${nav ? 'bg-transparent':'bg-background'} backdrop-blur-xl md:backdrop-blur-0 md:bg-background flex justify-center items-center fixed w-full lg:mb-[50px] z-50 top-0 start-0 shadow-xl`}>
+        <animated.nav style={enterLeft} className={`${nav ? 'bg-transparent':'bg-background'} backdrop-blur-xl md:backdrop-blur-0 md:bg-background flex justify-center items-center sticky w-full z-50 top-0 left-0 shadow-xl`}>
             <div className={`max-w-[1800px] w-[90%]  ${nav ? 'h-screen  flex justify-evenly items-center flex-col' : ''} pt-1 md:py-1`}>
                 <button onClick={() => setNav(!nav)} className={`${nav ? 'absolute top-1 left-1' : ''} ${!nav && 'md:hidden'} ml-2 text-white`}>{nav ? < IoMdClose size={40} /> : <IoMenu size={40} />}</button>
                 <ul className={`md:flex ${nav ? '' : 'hidden'} w-[100%] mx-auto sm:mb-0 mb-10 md:justify-start md:gap-4 justify-evenly items-center rounded-lg `}>

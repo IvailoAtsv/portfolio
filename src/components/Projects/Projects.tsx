@@ -41,47 +41,30 @@ export const Projects: React.FC<ProjectsProps> = ({
     }
   }, [selectedSkill]);
 
-  const componentRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
+  // const componentRef = useRef(null);
+  // const [isVisible, setIsVisible] = useState(false);
 
-  const slideAnimation = useSpring({
-    from: {
-      opacity: isVisible ? "0" : "1",
-      transform: isVisible ? "translateX(-200%)" : "translateX(0%)",
-    },
-    to: {
-      opacity: isVisible ? "1" : "0",
-      transform: isVisible ? "translateX(0%)" : "translateX(-200%)",
-    },
-    config: { 
-      mass: 1,
-      friction: 30,
-      tension: 220,
-     },
-    delay: 100,
-  });
+  // useEffect(() => {
+  //   const observer = new IntersectionObserver(
+  //     (entries) => {
+  //       entries.forEach((entry) => {
+  //         if(entry.isIntersecting) setIsVisible(true)
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if(entry.isIntersecting) setIsVisible(!!entry.isIntersecting)
+  //       },100);
+  //     },
+  //     { threshold: 0 }
+  //   );
 
-        },100);
-      },
-      { threshold: 0 }
-    );
+  //   if (componentRef.current) {
+  //     observer.observe(componentRef.current);
+  //   }
 
-    if (componentRef.current) {
-      observer.observe(componentRef.current);
-    }
-
-    return () => {
-      if (componentRef.current) {
-        observer.unobserve(componentRef.current);
-      }
-    };
-  }, []);
+  //   return () => {
+  //     if (componentRef.current) {
+  //       observer.unobserve(componentRef.current);
+  //     }
+  //   };
+  // }, []);
 
   const allSkills = Array.from(
     new Set(projects.map((project) => project.skills).flat())
@@ -90,11 +73,10 @@ export const Projects: React.FC<ProjectsProps> = ({
   return (
     <div
       id="projects"
-      ref={componentRef}
-      className="min-h-[100vh] my-5 w-full flex justify-center items-start"
+      // ref={componentRef}
+      className={`min-h-[100vh] my-5 w-full flex justify-center transition duration-300 items-start`}
     >
-      <animated.div
-        style={slideAnimation}
+      <div
         className="w-[90%] max-w-[1800px] flex flex-col justify-start items-start"
       >
         <MainTitle classes="my-5" text="Some of my projects" />
@@ -127,7 +109,7 @@ export const Projects: React.FC<ProjectsProps> = ({
             />
           ))}
         </section>
-      </animated.div>
+      </div>
     </div>
   );
 };
@@ -162,7 +144,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <a
           href={github}
           target="_blank"
-          className="absolute flex items-center justify-center gap-2  top-[1%] text-purple right-[1%] cursor-pointer animate-pulse"
+          className="absolute flex items-center justify-center gap-2  top-[1%] text-purple right-[1%] cursor-pointer"
         >
           Github: <FaExternalLinkAlt size={12} />
         </a>
