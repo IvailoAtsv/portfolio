@@ -39,8 +39,8 @@ export const Hero:React.FC<HeroProps> = ({setSelectedSkill, selectedSkill}) => {
     }, [])
 
     return (
-        <div id="home" className="w-full relative h-[95vh] overflow-x-hidden bg-background flex justify-center items-center">
-            {showArrow && <FaArrowDown className={`animate-bounce text-lightGray absolute lg:bottom-[3%] bottom-[5%] mx-auto`} size={40} />}
+        <div id="home" className="w-full relative h-dvh md:h-[90vh] overflow-x-hidden bg-background flex justify-center items-center">
+            {showArrow && <FaArrowDown className={`animate-bounce text-lightGray absolute bottom-0 mx-auto`} size={40} />}
             <div className="max-w-[1800px] pb-10 w-[90%] h-[100%] justify-center lg:justify-between flex sm:gap-2 gap-12 items-center flex-col-reverse lg:flex-row ">
                 <animated.div style={enterLeft} className="w-[90%] lg:w-[50%] max-w-[1000px] flex flex-col justify-center gap-2 items-center md:items-start">
                     <div className="lg:w-[50%] h-[100%] w-[100%]">

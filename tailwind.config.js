@@ -13,6 +13,9 @@ module.exports = {
         labelClamp:"clamp(1.3rem, 1.8vw, 2.3rem)",
         iconClamp: "clamp(4em, 10vw, 13rem)",
       },
+      height:{
+        dvh:'85lvh'
+      },
       colors: {
         background: '#00001C',
         lightBg: '#656565',
