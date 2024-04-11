@@ -1,5 +1,4 @@
-import React from "react";
-import { useRef, useState } from "react";
+import { useState } from "react";
 import { ContactMe } from "./components/ContactMe";
 import { Experience } from "./components/Experience/Experience";
 import { Hero } from "./components/Hero";
@@ -11,7 +10,7 @@ function App() {
   const [selectedSkill, setSelectedSkill] = useState("");
 
   return (
-    <div className="w-full bg-background relative min-h-screen flex flex-col justify-start items-center">
+    <main className="w-full pt-20 bg-background relative min-h-screen flex flex-col justify-start items-center">
       <Navbar />
       <SpeedInsights />
       <Analytics />
@@ -22,7 +21,7 @@ function App() {
         setSelectedSkill={setSelectedSkill}
       />
       <ContactMe />
-    </div>
+    </main>
   );
 }
 

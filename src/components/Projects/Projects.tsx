@@ -71,7 +71,7 @@ export const Projects: React.FC<ProjectsProps> = ({
   );
 
   return (
-    <div
+    <main
       id="projects"
       // ref={componentRef}
       className={`min-h-[100vh] my-5 w-full flex justify-center transition duration-300 items-start`}
@@ -110,7 +110,7 @@ export const Projects: React.FC<ProjectsProps> = ({
           ))}
         </section>
       </div>
-    </div>
+    </main>
   );
 };
 
@@ -128,7 +128,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   skills,
 }) => {
   return (
-    <div className="w-full rounded-xl p-4 flex flex-col lg:flex-row gap-4 justify-start items-start lg:h-[250px] bg-gray bg-opacity-10">
+    <article className="w-full rounded-xl p-4 flex flex-col lg:flex-row gap-4 justify-start items-start lg:h-[250px] bg-gray bg-opacity-10">
       {video ? (
         <video
           muted
@@ -163,6 +163,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           ))}
         </div>
       </div>
-    </div>
+    </article>
   );
 };

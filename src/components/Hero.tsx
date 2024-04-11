@@ -39,10 +39,10 @@ export const Hero:React.FC<HeroProps> = ({setSelectedSkill, selectedSkill}) => {
     }, [])
 
     return (
-        <div id="home" className="w-full relative h-dvh md:h-[90vh] overflow-x-hidden bg-background flex justify-center items-center">
+        <main id="home" className="w-full relative h-dvh md:h-[90vh] overflow-x-hidden bg-background flex justify-center items-center">
             {showArrow && <FaArrowDown className={`animate-bounce text-lightGray absolute bottom-0 mx-auto`} size={40} />}
             <div className="max-w-[1800px] pb-10 w-[90%] h-[100%] justify-center lg:justify-between flex sm:gap-2 gap-12 items-center flex-col-reverse lg:flex-row ">
-                <animated.div style={enterLeft} className="w-[90%] lg:w-[50%] max-w-[1000px] flex flex-col justify-center gap-2 items-center md:items-start">
+                <animated.section style={enterLeft} className="w-[90%] lg:w-[50%] max-w-[1000px] flex flex-col justify-center gap-2 items-center md:items-start">
                     <div className="lg:w-[50%] h-[100%] w-[100%]">
                         <AccentTitle text={'Hi, my name is...'} />
                         <MainTitle classes="whitespace-nowrap" text={'Ivaylo Atanasov.'} />
@@ -52,12 +52,12 @@ export const Hero:React.FC<HeroProps> = ({setSelectedSkill, selectedSkill}) => {
                     </div>
                     <button onClick={downloadCV} className={buttonStyle}>Check out my CV!</button>
 
-                </animated.div>
+                </animated.section>
 
                 <animated.div style={enterRight} className="lg:w-[50%] w-[90%] relative max-w-[750px] overflow-hidden">                      
                     <img alt="Animation displaying all of my skills" src={laptop} className="w-[100%]" />
                     <div className='shadow-md absolute top-[2.3%] bg-black left-[13.5%] max-w-[600px] w-[73%] h-[65.5%] text-lightGray my-auto'>
-                        <p className="absolute top-0 left-0 text-sm text-purple p-1 animate-pulse">click on a skill...</p>
+                        <p className="absolute top-0 left-1 text-sm text-purple p-1 animate-pulse">click on a skill...</p>
                         <Marquee direction="left" pauseOnHover={true} play={true} className="my-auto h-full" speed={80}>                
                             {icons.map((icon) => <SkillIcon setSelectedSkill={setSelectedSkill} key={uniqid()} icon={icon.icon} title={icon.title} />)}
                         </Marquee>
@@ -68,7 +68,7 @@ export const Hero:React.FC<HeroProps> = ({setSelectedSkill, selectedSkill}) => {
 
             </div>
 
-        </div>
+        </main>
     )
 }
 interface SkillIconProps{
