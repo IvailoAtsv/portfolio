@@ -9,7 +9,7 @@ import laptop from '../images/laptop.webp'
 import { icons } from "../constants/skillIcons";
 import { saveAs } from 'file-saver'
 import CV from '../other/CV.pdf'
-import { handleProjectsScroll } from "../constants/scrollFunctions";
+import { handleContactScroll, handleProjectsScroll } from "../constants/scrollFunctions";
 
 interface HeroProps{
     selectedSkill: string;
@@ -17,6 +17,7 @@ interface HeroProps{
 }
 
 export const buttonStyle = "bg-background self-start p-2 rounded-lg transition duration-300 text-md border-purple border-[2px] text-purple hover:bg-purple hover:border-background hover:text-black font-mono"
+export const mainButtonStyle = "bg-purple self-start p-2 rounded-lg transition duration-300 text-md border-purple border-[2px] text-background hover:bg-background hover:border-purple hover:text-purple font-mono"
 
 
 export const Hero:React.FC<HeroProps> = ({setSelectedSkill, selectedSkill}) => {
@@ -50,7 +51,10 @@ export const Hero:React.FC<HeroProps> = ({setSelectedSkill, selectedSkill}) => {
                         <h4 className="text-lightGray py-2">Passionate about front-end and full stack development, I possess a keen eye for design and a genuine love for crafting seamless and intuitive user experiences. My expertise lies in transforming concepts into visually striking and responsive web applications. </h4>
 
                     </div>
-                    <button onClick={downloadCV} className={buttonStyle}>Check out my CV!</button>
+                    <div className="flex gap-4">
+                        <button onClick={handleContactScroll} className={mainButtonStyle}>Contact me!</button>
+                        <button onClick={downloadCV} className={buttonStyle}>Check out my CV!</button>
+                    </div>
 
                 </animated.section>
 
