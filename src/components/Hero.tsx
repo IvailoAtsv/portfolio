@@ -16,8 +16,8 @@ interface HeroProps{
     setSelectedSkill: Dispatch<SetStateAction<string>>
 }
 
-export const buttonStyle = "bg-background self-start p-2 rounded-md transition duration-300 text-md border-purple border-[2px] text-purple hover:bg-purple hover:border-background hover:text-black font-mono"
-export const mainButtonStyle = "bg-purple self-start p-2 rounded-md transition duration-300 text-md border-purple border-[2px] text-background hover:bg-background hover:border-purple hover:text-purple font-mono"
+export const buttonStyle = "hover:translate-y-[-3px] hover:scale-105 bg-background self-start p-2 rounded-md transition duration-300 text-md border-purple border-[2px] text-purple hover:bg-purple hover:border-background hover:text-black font-mono"
+export const mainButtonStyle ="hover:translate-y-[-3px] hover:scale-105 shadow-lg bg-purple self-start p-2 rounded-md transition duration-300 text-md border-purple border-[2px] text-background hover:bg-background hover:border-purple hover:text-purple font-mono"
 
 
 export const Hero:React.FC<HeroProps> = ({setSelectedSkill, selectedSkill}) => {
@@ -63,7 +63,7 @@ export const Hero:React.FC<HeroProps> = ({setSelectedSkill, selectedSkill}) => {
                     <div className='shadow-md absolute top-[2.3%] bg-black left-[13.5%] max-w-[600px] w-[73%] h-[65.5%] text-lightGray my-auto'>
                         <p className="absolute top-0 left-1 text-sm text-purple p-1 animate-pulse">click on a skill...</p>
                         <Marquee direction="left" pauseOnHover={true} play={true} className="my-auto h-full" speed={80}>                
-                            {icons.map((icon) => <SkillIcon setSelectedSkill={setSelectedSkill} key={uniqid()} icon={icon.icon} title={icon.title} />)}
+                            {icons.map((icon) => <SkillIcon setSelectedSkill={setSelectedSkill} key={uniqid()} icon={icon.icon}  title={icon.title} />)}
                         </Marquee>
 
                     </div>
@@ -86,7 +86,7 @@ export const SkillIcon:React.FC<SkillIconProps> = ({ setSelectedSkill, icon, tit
         <div onClick={() => {
             setSelectedSkill(title)
             handleProjectsScroll()
-            }} className="flex transition cursor-pointer duration-300 flex-col justify-center items-center mx-3 text-lightGray hover:text-purple">
+            }} className="hover:translate-y-[-3px] hover:scale-105 flex transition cursor-pointer duration-300 flex-col justify-center items-center mx-3 text-lightGray hover:text-purple">
             {icon}
             <p className="pt-2 text-md font-mono ">{title}</p>
         </div>

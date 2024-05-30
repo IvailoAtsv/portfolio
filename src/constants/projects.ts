@@ -4,6 +4,14 @@ import ignis from '../images/thumbnails/ignis.mp4'
 import thisP from '../images/thumbnails/this.webp'
 
 export const projects = [
+   
+    {
+        github:'https://github.com/IvailoAtsv/alcona-solutions',
+        title: 'Alcona Solutions',
+        description: 'The Alcona project represents my initiation into building a website from the ground up. During the development process I learnt how to deal with difficult challenges and learn on my own.',
+        src: alcona,
+        skills: ['React JS','Javascript','React-Spring', 'HTML 5', 'Tailwind CSS']
+    },
     {
         github:'https://github.com/IvailoAtsv/windyHills',
         title: 'Windy Hills',
@@ -20,17 +28,10 @@ export const projects = [
         skills: ['Javascript', 'HTML 5', 'CSS 3']
     },
     {
-        github:'https://github.com/IvailoAtsv/alcona-solutions',
-        title: 'Alcona Solutions',
-        description: 'The Alcona project represents my initiation into building a website from the ground up. During the development process I learnt how to deal with difficult challenges and learn on my own.',
-        src: alcona,
-        skills: ['React JS','Javascript','React-Spring', 'HTML 5', 'Tailwind CSS']
-    },
-    {
         src:thisP,
         title:'And of course...',
         description:"Don't forget to check out this portfiolio's github repo!",
         github:'https://github.com/IvailoAtsv/portfolio',
         skills:['React JS', 'Typescript','React-hook-form','React-Spring', 'HTML 5', 'Tailwind CSS']
-    }
+    },
 ]

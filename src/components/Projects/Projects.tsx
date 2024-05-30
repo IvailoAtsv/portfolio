@@ -138,13 +138,13 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           className="lg:h-[100%]"
         />
       ) : (
-        <img src={src} className="lg:h-[100%]" alt="Project front-page image" />
+        <img src={src} className="lg:h-[100%]" alt="Project front-page" />
       )}
       <div className="flex relative w-full gap-3 lg:gap-6 h-full flex-col justify-evenly items-start">
         <a
           href={github}
           target="_blank"
-          className="absolute flex items-center justify-center gap-2  top-[1%] text-purple right-[1%] cursor-pointer"
+          className="hover:translate-y-[-3px] hover:scale-105 transition duration-300 absolute flex items-center justify-center gap-2  top-[1%] text-purple right-[1%] cursor-pointer" rel="noreferrer"
         >
           Github: <FaExternalLinkAlt size={12} />
         </a>
