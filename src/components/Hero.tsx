@@ -15,7 +15,7 @@ interface HeroProps{
     setSelectedSkill: Dispatch<SetStateAction<string>>
 }
 
-export const buttonStyle = "hover:translate-y-[-3px] hover:scale-105 bg-background self-start p-2 rounded-md transition duration-300 text-md border-purple border-[2px] text-purple hover:bg-purple hover:border-background hover:text-black font-mono"
+export const buttonStyle = "hover:translate-y-[-3px] hover:scale-105 bg-background self-start p-2 rounded-md transition duration-300 text-md border-purple border-[2px] text-purple hover:bg-purple hover:border-purple hover:text-black font-mono"
 export const mainButtonStyle ="hover:translate-y-[-3px] hover:scale-105 shadow-lg bg-purple self-start p-2 rounded-md transition duration-300 text-md border-purple border-[2px] text-background hover:bg-background hover:border-purple hover:text-purple font-mono"
 
 const enterLeftAnimation = {
@@ -62,8 +62,8 @@ export const Hero:React.FC<HeroProps> = ({setSelectedSkill, selectedSkill}) => {
                         <h4 className="text-lightGray py-2">Passionate about front-end and full stack development, I possess a keen eye for design and a genuine love for crafting seamless and intuitive user experiences. My expertise lies in transforming concepts into visually striking and responsive web applications. </h4>
                     </div>
                     <div className="flex gap-4 w-full">
-                        <button onClick={handleContactScroll} className={mainButtonStyle}>Contact me!</button>
-                        <button onClick={downloadCV} className={buttonStyle}>Check out my CV!</button>
+                        <button onClick={handleContactScroll} className={mainButtonStyle}>Hire me</button>
+                        <button onClick={downloadCV} className={buttonStyle}>Check out my CV</button>
                     </div>
                 </motion.section>
 
