@@ -1,5 +1,5 @@
-import { Dispatch, SetStateAction, useEffect, useRef, useState } from "react";
-import { useSpring, animated } from "react-spring";
+import { Dispatch, SetStateAction, useEffect, useState, useRef } from "react";
+import { motion, useInView } from "framer-motion";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import uniqid from "uniqid";
 import { AccentTitle, MainTitle } from "../ReusableComponents/Titles";
@@ -35,36 +35,12 @@ export const Projects: React.FC<ProjectsProps> = ({
 
     return projectsUsingSkill.concat(projectsNotUsingSkill);
   };
+
   useEffect(() => {
-    if(selectedSkill){
+    if (selectedSkill) {
       setProjectList(sortBySkillUsage(selectedSkill, projectList));
     }
   }, [selectedSkill]);
-
-  // const componentRef = useRef(null);
-  // const [isVisible, setIsVisible] = useState(false);
-
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(
-  //     (entries) => {
-  //       entries.forEach((entry) => {
-  //         if(entry.isIntersecting) setIsVisible(true)
-
-  //       },100);
-  //     },
-  //     { threshold: 0 }
-  //   );
-
-  //   if (componentRef.current) {
-  //     observer.observe(componentRef.current);
-  //   }
-
-  //   return () => {
-  //     if (componentRef.current) {
-  //       observer.unobserve(componentRef.current);
-  //     }
-  //   };
-  // }, []);
 
   const allSkills = Array.from(
     new Set(projects.map((project) => project.skills).flat())
@@ -73,12 +49,9 @@ export const Projects: React.FC<ProjectsProps> = ({
   return (
     <main
       id="projects"
-      // ref={componentRef}
       className={`min-h-[100vh] my-5 w-full flex justify-center transition duration-300 items-start`}
     >
-      <div
-        className="w-[90%] max-w-[1800px] flex flex-col justify-start items-start"
-      >
+      <div className="w-[90%] max-w-[1800px] flex flex-col justify-start items-start">
         <MainTitle classes="my-5" text="Some of my projects" />
         <div className="w-full my-3">
           <AccentTitle classes="inline mb-5" text="Used: " />
@@ -127,8 +100,17 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   video = false,
   skills,
 }) => {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: false});
+
   return (
-    <article className="w-full rounded-xl p-4 flex flex-col lg:flex-row gap-4 justify-start items-start lg:h-[250px] bg-gray bg-opacity-10">
+    <motion.article
+      ref={ref}
+      initial={{ opacity: 0, x: 100 }}
+      animate={inView ? { opacity: 1, x: 0 } : { opacity: 0, x: 100 }}
+      transition={{ duration: 0.5 }}
+      className="w-full rounded-xl p-4 flex flex-col lg:flex-row gap-4 justify-start items-start lg:h-[250px] bg-gray bg-opacity-10"
+    >
       {video ? (
         <video
           muted
@@ -138,24 +120,25 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           className="lg:h-[100%]"
         />
       ) : (
-        <img src={src} className="lg:h-[100%]" alt="Project front-page" />
+        <img src={src} className="min-w-[400px] rounded-md lg:h-[100%]" alt="Project front-page" />
       )}
       <div className="flex relative w-full gap-3 lg:gap-6 h-full flex-col justify-evenly items-start">
         <a
           href={github}
           target="_blank"
-          className="hover:translate-y-[-3px] hover:scale-105 transition duration-300 absolute flex items-center justify-center gap-2  top-[1%] text-purple right-[1%] cursor-pointer" rel="noreferrer"
+          className="hover:translate-y-[-3px] hover:scale-105 transition duration-300 absolute flex items-center justify-center gap-2 top-[1%] text-purple right-[1%] cursor-pointer"
+          rel="noreferrer"
         >
           Github: <FaExternalLinkAlt size={12} />
         </a>
-        <h2 className="text-white text-xl md:text-3xl">{title}</h2>
-        <p className="text-xl mt-auto text-white">{description}</p>
+        <h2 className="text-white font-semibold text-xl md:text-3xl">{title}</h2>
+        <p className="text-xl mt-auto opacity-75 text-white">{description}</p>
         <div className="flex mt-auto flex-wrap justify-start gap-1 items-start">
           {skills.map((skill) => (
             <p
               key={`${uniqid()} - skill`}
               className={`px-2 py-1 rounded-md text-white ${
-                selectedSkill == skill ? "bg-purple" : "bg-background"
+                selectedSkill === skill ? "bg-purple" : "bg-background"
               } self-start inline-block`}
             >
               {skill}
@@ -163,6 +146,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           ))}
         </div>
       </div>
-    </article>
+    </motion.article>
   );
 };

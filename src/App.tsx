@@ -10,7 +10,7 @@ function App() {
   const [selectedSkill, setSelectedSkill] = useState("");
 
   return (
-    <main className="w-full pt-20 bg-background relative min-h-screen flex flex-col justify-start items-center">
+    <main className="w-full overflow-x-hidden pt-20 bg-background relative min-h-screen flex flex-col justify-start items-center">
       <Navbar />
       <SpeedInsights />
       <Analytics />

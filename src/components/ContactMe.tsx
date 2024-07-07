@@ -2,14 +2,13 @@ import { ReactNode, useEffect, useRef, useState } from "react";
 import { useSpring, animated } from "react-spring";
 import { FieldValues, SubmitHandler, useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
-import { RxInput } from "react-icons/rx";
 import { AccentTitle, SecondaryTitle } from "./ReusableComponents/Titles";
 import { buttonStyle } from "./Hero";
 import { links } from "../constants/links";
 import { FaHeart } from "react-icons/fa";
 
 const inputStyles =
-  "focus:outline-none w-[100%] lg:w-[95%] px-2 py-3 mb-5 text-2xl rounded-md text-white bg-gray bg-opacity-10  border-purple";
+  "focus:outline-none w-[100%] lg:w-[95%] px-2 py-3 mb-5 text-2xl rounded-md text-white bg-gray bg-opacity-10 border-purple";
 const labelStyles = "font-mono mb-1 text-lightGray text-2xl";
 const labelErrorStyles = "font-mono mb-1 text-red-600 text-2xl";
 
@@ -25,15 +24,13 @@ export const ContactMe = () => {
   const {
     register,
     handleSubmit,
-    watch,
     formState: { errors },
   } = useForm();
   const onSubmit: SubmitHandler<FieldValues> = async (data) => {
-    // honeypot, bot prevention
-    if(data.hnyPot){
-      return
+    if (data.hnyPot) {
+      return;
     }
-    setSent(true)
+    setSent(true);
     setLoading(true);
     const params = {
       name: data.name,
@@ -46,43 +43,49 @@ export const ContactMe = () => {
       process.env.REACT_APP_PUBLIC
     ) {
       try {
-        await emailjs.send(
-          process.env.REACT_APP_SERVICE_ID,
-          process.env.REACT_APP_TEMPLATE,
-          params,
-          process.env.REACT_APP_PUBLIC
-        ).then(() => {
-          setLoading(false);
-        });
+        await emailjs
+          .send(
+            process.env.REACT_APP_SERVICE_ID,
+            process.env.REACT_APP_TEMPLATE,
+            params,
+            process.env.REACT_APP_PUBLIC
+          )
+          .then(() => {
+            setLoading(false);
+          });
       } catch (error) {
-        setLoading(false); 
-        }
+        setLoading(false);
+      }
+    }
   };
-}
-  // dear god, these animations are not worth the effort
-  const componentRef = useRef(null);
-  const [isVisible, setIsVisible] = useState(false);
 
-  const slideAnimation = useSpring({
-    from: {
-      opacity: isVisible ? "0" : "1",
-      transform: isVisible ? "translateX(-200%)" : "translateX(0%)",
-    },
-    to: {
-      opacity: isVisible ? "1" : "0",
-      transform: isVisible ? "translateX(0%)" : "translateX(-200%)",
-    },
+  const componentRef = useRef<HTMLDivElement>(null);
+  const [isContactVisible, setIsContactVisible] = useState(false);
+  const [isFindMeVisible, setIsFindMeVisible] = useState(false);
+
+  const contactAnimation = useSpring({
+    opacity: isContactVisible ? 1 : 0,
+    transform: isContactVisible ? "translateX(0%)" : "translateX(-200%)",
     config: { tension: 220, friction: 30 },
     delay: 300,
   });
+
+  const findMeAnimation = useSpring({
+    opacity: isFindMeVisible ? 1 : 0,
+    transform: isFindMeVisible ? "translateX(0%)" : "translateX(200%)",
+    config: { tension: 220, friction: 30 },
+    delay: 500,
+  });
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if(entry.isIntersecting) setIsVisible(!!entry.isIntersecting)
+          setIsContactVisible(entry.isIntersecting);
+          setIsFindMeVisible(entry.isIntersecting);
         });
       },
-      { threshold: 0 }
+      { threshold: 0.1 }
     );
 
     if (componentRef.current) {
@@ -103,8 +106,8 @@ export const ContactMe = () => {
       className="h-auto border-t-2 border-white mt-10 relative flex flex-col justify-center items-center w-full"
     >
       <animated.section
-        style={slideAnimation}
-        className=" py-5 pl-1 max-w-[1800px] w-[90%]"
+        style={contactAnimation}
+        className="py-5 pl-1 max-w-[1800px] w-[90%]"
       >
         <AccentTitle text={"Like what you see?"} classes="mr-auto" />
       </animated.section>
@@ -126,7 +129,7 @@ export const ContactMe = () => {
         ) : (
           <animated.form
             onSubmit={handleSubmit(onSubmit)}
-            style={slideAnimation}
+            style={contactAnimation}
             className="flex-2 w-full flex p-4 flex-col border-white lg:max-w-[42%] justify-evenly items-start rounded-xl"
           >
             <SecondaryTitle text={"Get in touch now"} classes="mb-5" />
@@ -145,7 +148,7 @@ export const ContactMe = () => {
               type="text"
               className={inputStyles}
             />
-            <input type="text" className="hidden" {...register('hnyPot')} />
+            <input type="text" className="hidden" {...register("hnyPot")} />
             {errors.email && errors.email.message !== undefined ? (
               <label className={labelErrorStyles}>
                 {" "}
@@ -185,20 +188,20 @@ export const ContactMe = () => {
           </animated.form>
         )}
         <animated.div
-          style={slideAnimation}
+          style={findMeAnimation}
           className="text-center w-full flex-1 py-8 lg:py-3 self-center"
         >
           <AccentTitle text="Or..." classes="overflow-hidden z-50" />
         </animated.div>
         <animated.section
-          style={slideAnimation}
-          className="text-white p-4  border-white flex-2 w-full lg:max-w-[42%] rounded-xl flex flex-col justify-between items-start"
+          style={findMeAnimation}
+          className="text-white p-4 border-white flex-2 w-full lg:max-w-[42%] rounded-xl flex flex-col justify-between items-start"
         >
           <h1 className="text-h2clamp whitespace-nowrap mb-5 font-semibold">
             {" "}
             Find me on...
           </h1>
-          <div className=" text-3xl flex flex-col rounded-xl flex-wrap items-start justify-evenly h-full text-lightGray  w-full my-2 md:my-0">
+          <div className="text-3xl flex flex-col rounded-xl flex-wrap items-start justify-evenly h-full text-lightGray w-full my-2 md:my-0">
             {links.map((link) => (
               <LinkPair
                 key={link.text}
@@ -222,7 +225,7 @@ const LinkPair: React.FC<LinkProps> = ({ href, text, icon }) => {
       <a
         href={href}
         target="_blank"
-        className={`${buttonStyle} ml-auto text-sm px-6 my-auto`}
+        className={`${buttonStyle} ml-auto text-sm px-6 my-auto`} rel="noreferrer"
       >
         {" "}
         Go

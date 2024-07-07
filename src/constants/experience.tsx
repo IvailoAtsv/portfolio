@@ -74,7 +74,7 @@ export const experienceCards = [
     "Achieved rapid development of the entire website within just under 5 business days of intensive work hours, meeting tight deadlines without compromising quality.",
 ],
   location:'Remote',
-  skills:['UX/UI','React JS','Typescript' ,'Tailwind CSS' ],
+  skills:['UX/UI','Next JS','Typescript' ,'Tailwind CSS' ],
   icon:<RiHomeOfficeFill/>
 },
 ]
