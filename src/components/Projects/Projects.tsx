@@ -170,6 +170,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
         <video
           muted
           autoPlay={true}
+          playsInline={true}
           loop={true}
           src={src}
           className="md:min-w-[400px] max-w-[100%] rounded-md lg:h-[100%]"
