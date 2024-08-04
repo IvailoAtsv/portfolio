@@ -10,9 +10,20 @@ import { saveAs } from 'file-saver'
 import CV from '../other/CV.pdf'
 import { handleContactScroll, handleProjectsScroll } from "../constants/scrollFunctions";
 
+type Lang = {
+    accentTitle: string;
+  main: string;
+  secondary: string;
+  description: string;
+  btn1: string;
+  btn2: string;
+  laptop: string;
+}
+
 interface HeroProps{
     selectedSkill: string;
     setSelectedSkill: Dispatch<SetStateAction<string>>
+    selectedLanguege: Lang;
 }
 
 export const buttonStyle = "hover:translate-y-[-3px] hover:scale-105 bg-background self-start p-2 rounded-md transition duration-300 text-md border-purple border-[2px] text-purple hover:bg-purple hover:border-purple hover:text-black font-mono"
@@ -28,7 +39,7 @@ const enterRightAnimation = {
     visible: { opacity: 1, x: 0 }
 };
 
-export const Hero:React.FC<HeroProps> = ({setSelectedSkill, selectedSkill}) => {
+export const Hero:React.FC<HeroProps> = ({selectedLanguege, setSelectedSkill, selectedSkill}) => {
     const [showArrow, setShowArrow] = useState(false);
 
     const downloadCV = () => {
@@ -56,14 +67,14 @@ export const Hero:React.FC<HeroProps> = ({setSelectedSkill, selectedSkill}) => {
                     className="w-[90%] md:w-[50%] max-w-[1000px] flex flex-col justify-center gap-2 items-center md:items-start"
                 >
                     <div className=" h-[100%] w-[100%]">
-                        <AccentTitle text={'Hi, my name is...'} />
-                        <MainTitle classes="whitespace-nowrap" text={'Ivaylo Atanasov.'} />
-                        <SecondaryTitle classes="whitespace-nowrap" text={"I am a web developer"} />
-                        <h4 className="text-lightGray py-2">Passionate about front-end and full stack development, I possess a keen eye for design and a genuine love for crafting seamless and intuitive user experiences. My expertise lies in transforming concepts into visually striking and responsive web applications. </h4>
+                        <AccentTitle text={selectedLanguege.accentTitle} />
+                        <MainTitle classes="whitespace-nowrap" text={selectedLanguege.main} />
+                        <SecondaryTitle classes="whitespace-nowrap" text={selectedLanguege.secondary} />
+                        <h4 className="text-lightGray py-2">{selectedLanguege.description}</h4>
                     </div>
                     <div className="flex gap-4 w-full">
-                        <button onClick={handleContactScroll} className={mainButtonStyle}>Hire me</button>
-                        <button onClick={downloadCV} className={buttonStyle}>Check out my CV</button>
+                        <button onClick={handleContactScroll} className={mainButtonStyle}>{selectedLanguege.btn1}</button>
+                        <button onClick={downloadCV} className={buttonStyle}>{selectedLanguege.btn2}</button>
                     </div>
                 </motion.section>
 
@@ -76,7 +87,7 @@ export const Hero:React.FC<HeroProps> = ({setSelectedSkill, selectedSkill}) => {
                 >
                     <img alt="Animation displaying all of my skills" src={laptop} className="w-[100%] object-cover" />
                     <div className='shadow-md absolute top-[2.3%] bg-black left-[13.5%] max-w-[600px] w-[73%] h-[65.5%] text-lightGray my-auto'>
-                        <p className="absolute top-0 left-1 text-sm text-purple p-1 animate-pulse">click on a skill...</p>
+                        <p className="absolute top-0 left-1 text-sm text-purple p-1 opacity-30">{selectedLanguege.laptop}</p>
                         <Marquee direction="left" pauseOnHover={true} play={true} className="my-auto h-full" speed={80}>                
                             {icons.map((icon) => <SkillIcon setSelectedSkill={setSelectedSkill} key={uniqid()} icon={icon.icon}  title={icon.title} />)}
                         </Marquee>

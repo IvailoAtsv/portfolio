@@ -19,62 +19,32 @@ export const educationCards = [
         skills:[ 'Programing basics', 'Best practices' , 'HTML', 'CSS', 'Javascript','React JS', 'Node JS',]
     }
 ]
-
 export const experienceCards = [
-    {
-    jobTitle:'Fullstack | Freelance',
-    date:'06-2023',
-    descriptionPoints:["Crafted a design tailored to the client's specific requirements and preferences, ensuring alignment with their vision and objectives.","Developed a comprehensive full-stack application in accordance with the provided design specifications.","Implemented an improved workflow, making it simpler for employees to manage the website"],
-    skills:['React JS', 'Node JS', 'Mongoose', 'MongoDB','Styled Components','UX/UI' ],
-    icon:<RiHomeOfficeFill/>
-},
-    {
-    jobTitle:'Front-end | Freelance',
-    date:'08-2023',
-    descriptionPoints:[
-        "Crafted a modern and inviting website design, tailored to enhance the online presence of a per sonal trainer, ensuring an appealing and user-friendly experience for visitors.",
-        "Created an intuitive platform that showcases the trainer's services and encourages client engagement.",
-        "Ensured a smooth and accessible browsing experience for users across devices, from desktops to mobile devices, thereby reaching a broader audience in the Netherlands."
-      ],
-    location:'Remote',
-    skills:[ 'HTML 5','CSS 3', 'Javascript','UX/UI' ],
-    icon:<RiHomeOfficeFill/>
-},
-    {
-    jobTitle:'Front-end | Freelance',
-    date:'10-2023',
-    descriptionPoints:[
-        "Crafted an elegant and user-friendly design of an online platform showcasing a diverse range of high-quality WPC fences.",
-        "Implemented an online shopping experience, enabling customers to effortlessly browse, select, and purchase their preferred fences.",
-        "Successfully delivered the entire website, from concept to launch, within a timeframe of 3 months, exceeding the client's expectations."
-      ],
-    location:'Remote',
-    skills:['UX/UI','React JS', 'Node JS', 'Mongoose', 'MongoDB','Tailwind CSS' ],
-    icon:<RiHomeOfficeFill/>
-},
+  {
+    icon:<RiHomeOfficeFill/>,
+    jobTitle: 'Freelance Developer',
+    date: '06-2023 - Ongoing',
+    descriptionPoints: [
+      "Crafted designs tailored to clients' specific requirements, ensuring alignment with their vision and objectives.",
+      "Developed comprehensive full-stack applications and modern, inviting website designs.",
+      "Implemented improved workflows and online shopping experiences, making it simpler for clients to manage their websites and for customers to browse, select, and purchase products.",
+      "Worked on a variety of projects, from personal trainers' websites to high-quality WPC fence platforms, delivering all within set timeframes and exceeding clients' expectations."
+    ],
+    skills: ['React JS', 'Node JS', 'Mongoose', 'MongoDB', 'Styled Components', 'UX/UI', 'HTML 5', 'CSS 3', 'JavaScript', 'Tailwind CSS', 'Next JS', 'TypeScript'],
+    location: 'Remote'
+  },
+  {
+    jobTitle: 'Full Stack Developer | Internship',
+    date: '11-2023',
+    icon:<RiHomeOfficeFill/>,
+    descriptionPoints: [
+      "Demonstrated rapid learning and adaptability by mastering new technologies within a short timeframe.",
+      "Successfully passed challenging exams, validating a solid understanding of complex concepts and technologies.",
+      "Developed a substantial project over the course of ~5 months, exhibiting strong project management and coding skills. The finished project stands as a testament to improvement and quality workmanship."
+    ],
+    skills: ['React JS', 'TypeScript', 'Node JS', 'Mongoose', 'MongoDB', 'MUI', 'UX/UI'],
+    location: 'Remote'
+  }
+];
 
-    {
-    jobTitle:'Full Stack | Internship',
-    date:'11-2023',
-    descriptionPoints:[
-        "Demonstrated rapid learning and adaptability by mastering new technologies within a short timeframe, showcasing a strong commitment to personal and professional development during the internship.",
-        "Successfully passed challenging exams, validating a solid understanding of complex concepts and technologies, which contributed to the continuous improvement of skills and knowledge.",
-        "Developed a substantial project over the course of ~5 months, exhibiting strong project management and coding skills.The finished project stands as a testament to improvement and quality worksmanship."
-      ],
-    location:'Remote',
-    skills:['React JS', 'Typescript','Node JS', 'Mongoose', 'MongoDB','MUI','UX/UI' ],
-    icon:<RiHomeOfficeFill/>
-},
-{
-  jobTitle:'Front-end | Freelance',
-  date:'02-2024',
-  descriptionPoints:[
-    "Developed a sleek and efficient website for a mechanic/car tuner, providing a seamless online presence for the business.",
-    "Implemented essential features such as service listings, appointment scheduling, and contact forms to enhance user experience and streamline communication.",
-    "Achieved rapid development of the entire website within just under 5 business days of intensive work hours, meeting tight deadlines without compromising quality.",
-],
-  location:'Remote',
-  skills:['UX/UI','Next JS','Typescript' ,'Tailwind CSS' ],
-  icon:<RiHomeOfficeFill/>
-},
-]
+

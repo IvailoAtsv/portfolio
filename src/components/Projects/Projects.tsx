@@ -2,12 +2,16 @@ import { Dispatch, SetStateAction, useEffect, useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import uniqid from "uniqid";
+import alcona from '../../images/thumbnails/alcona.webp'
+import windyHills from '../../images/thumbnails/windyHills.webp'
+import ignis from '../../images/thumbnails/ignis.mp4'
+import thisP from '../../images/thumbnails/this.webp'
 import { AccentTitle, MainTitle } from "../ReusableComponents/Titles";
-import { projects } from "../../constants/projects";
 
 interface ProjectsProps {
   selectedSkill: string;
   setSelectedSkill: Dispatch<SetStateAction<string>>;
+  selectedLanguege:ProjectsI
 }
 
 interface Project {
@@ -19,10 +23,60 @@ interface Project {
   skills: string[];
 }
 
+interface ProjectCard {
+  title: string;
+  desc: string;
+}
+
+interface ProjectsI {
+  title: string;
+  projects: {
+    project1: ProjectCard;
+    project2: ProjectCard;
+    project3: ProjectCard;
+    project4: ProjectCard;
+  };
+}
+
 export const Projects: React.FC<ProjectsProps> = ({
+  selectedLanguege,
   selectedSkill,
   setSelectedSkill,
 }) => {
+
+const projects = [
+   
+    {
+        github:'https://github.com/IvailoAtsv/alcona-solutions',
+        title: selectedLanguege.projects.project1.title,
+        description:selectedLanguege.projects.project1.desc,
+        src: alcona,
+        skills: ['React JS','Javascript','React-Spring', 'HTML 5', 'Tailwind CSS']
+    },
+    {
+        github:'https://github.com/IvailoAtsv/windyHills',
+        title: selectedLanguege.projects.project2.title,
+        description: selectedLanguege.projects.project2.desc,
+        src: windyHills,
+        skills: ['React JS','Node JS' ,'Javascript', 'HTML 5', 'CSS 3', 'Styled Components']
+    },
+    {
+        github:'https://github.com/IvailoAtsv/Ignis',
+        title: selectedLanguege.projects.project3.title,
+        description: selectedLanguege.projects.project3.desc,
+        video:true,
+        src: ignis,
+        skills: ['Javascript', 'HTML 5', 'CSS 3']
+    },
+    {
+        src:thisP,
+        title:selectedLanguege.projects.project4.title,
+        description:selectedLanguege.projects.project4.desc,
+        github:'https://github.com/IvailoAtsv/portfolio',
+        skills:['React JS', 'Typescript','React-hook-form','React-Spring', 'HTML 5', 'Tailwind CSS']
+    },
+]
+
   const [projectList, setProjectList] = useState<Project[]>(projects);
 
   const sortBySkillUsage = (skill: string, projects: Project[]) => {
@@ -52,7 +106,7 @@ export const Projects: React.FC<ProjectsProps> = ({
       className={`min-h-[100vh] my-5 w-full flex justify-center transition duration-300 items-start`}
     >
       <div className="w-[90%] max-w-[1800px] flex flex-col justify-start items-start">
-        <MainTitle classes="my-5" text="Some of my projects" />
+        <MainTitle classes="my-5" text={selectedLanguege.title} />
         <div className="w-full my-3">
           <AccentTitle classes="inline mb-5" text="Used: " />
           <select
@@ -117,10 +171,10 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           autoPlay={true}
           loop={true}
           src={src}
-          className="lg:h-[100%]"
+          className="md:min-w-[400px] max-w-[100%] rounded-md lg:h-[100%]"
         />
       ) : (
-        <img src={src} className="min-w-[400px] rounded-md lg:h-[100%]" alt="Project front-page" />
+        <img src={src} className="md:min-w-[400px] max-w-[100%] rounded-md lg:h-[100%]" alt="Project front-page" />
       )}
       <div className="flex relative w-full gap-3 lg:gap-6 h-full flex-col justify-evenly items-start">
         <a
