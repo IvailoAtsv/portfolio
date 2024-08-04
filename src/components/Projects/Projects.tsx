@@ -36,6 +36,7 @@ interface ProjectsI {
     project3: ProjectCard;
     project4: ProjectCard;
   };
+  used:string;
 }
 
 export const Projects: React.FC<ProjectsProps> = ({
@@ -108,7 +109,7 @@ const projects = [
       <div className="w-[90%] max-w-[1800px] flex flex-col justify-start items-start">
         <MainTitle classes="my-5" text={selectedLanguege.title} />
         <div className="w-full my-3">
-          <AccentTitle classes="inline mb-5" text="Used: " />
+          <AccentTitle classes="inline mb-5" text={selectedLanguege.used} />
           <select
             value={selectedSkill}
             onChange={(e) => setSelectedSkill(e.target.value)}

@@ -64,7 +64,7 @@ export const Hero:React.FC<HeroProps> = ({selectedLanguege, setSelectedSkill, se
                     animate="visible"
                     variants={enterLeftAnimation}
                     transition={{ duration: 0.3 }}
-                    className="w-[90%] md:w-[50%] max-w-[1000px] flex flex-col justify-center gap-2 items-center md:items-start"
+                    className="w-full px-2 md:w-[50%] max-w-[1000px] flex flex-col justify-center gap-2 items-center md:items-start"
                 >
                     <div className=" h-[100%] w-[100%]">
                         <AccentTitle text={selectedLanguege.accentTitle} />
