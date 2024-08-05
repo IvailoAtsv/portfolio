@@ -56,7 +56,7 @@ export const Services: React.FC<{selectedLanguege: ServicesI }> = ({selectedLang
     >
       <div className="w-[90%] max-w-[1800px] flex flex-col justify-center items-center">
     <SecondaryTitle classes="my-5 mr-auto" text={selectedLanguege.title} />
-        <section className="w-full my-4 h-full flex md:flex-row flex-col gap-4">
+        <section className="w-full my-4 h-full flex lg:flex-row flex-col gap-4">
           {services.map((service, index) => (
         <ServiceCard
           key={index}
@@ -88,7 +88,7 @@ const ServiceCard: React.FC<{ title: string; description: string; icon: ReactNod
       initial={{ opacity: 0, y: -50 }}
       animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 50 }}
       transition={{ duration: 0.5 }}
-      className="w-full min-h-[40vh] gap-2 rounded-xl p-4 flex flex-col items-center text-center justify-evenly bg-gray bg-opacity-10"
+      className="w-full min-h-[40vh] lg:gap-2 rounded-xl p-4 flex flex-col items-center text-center justify-evenly bg-gray bg-opacity-10"
     >
       <div className="text-purple text-[4rem]">{icon}</div>
       <h3 className="text-white font-semibold text-2xl">{title}</h3>
