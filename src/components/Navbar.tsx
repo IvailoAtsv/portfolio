@@ -31,8 +31,8 @@ export const Navbar:React.FC<NavbarProps> =({langSwitch,setLangSwitch, selectedL
 
         <animated.header style={enterLeft} className={`${nav ? 'bg-transparent':'bg-background'} backdrop-blur-xl md:backdrop-blur-0 md:bg-background flex justify-center items-center fixed w-full z-50 top-0 left-0 shadow-xl`}>
             <nav className={`max-w-[1800px] w-[90%] relative ${nav ? 'h-screen flex justify-evenly items-center flex-col' : ''} pt-1 md:py-1`}>
-                <button onClick={() => setNav(!nav)} className={`${nav ? 'absolute top-1 left-5' : ''} ${!nav && 'md:hidden'} text-white`}>{nav ? < IoMdClose size={40} /> : <IoMenu size={40} />}</button>
-                <button onClick={() => setLangSwitch(!langSwitch)} className='absolute top-[50%] translate-y-[-50%] rounded-xl right-1 text-white'>{!langSwitch ? <img src={bg} alt='bulgarian flag' className= 'h-[30px] w-[30px] rounded-md '/> : <img src={uk} className='h-[30px] w-[30px] rounded-md' alt='english flag'/>}</button>
+                <button onClick={() => setNav(!nav)} className={`${nav ? 'absolute top-1 left-1' : ''} ${!nav && 'md:hidden'} text-white`}>{nav ? < IoMdClose size={40} /> : <IoMenu size={40} />}</button>
+                <button onClick={() => setLangSwitch(!langSwitch)} className={`${nav ? 'absolute top-[11px] right-1' : 'absolute top-[50%] translate-y-[-50%]'}  rounded-xl right-1 text-white`}>{!langSwitch ? <img src={bg} alt='bulgarian flag' className= 'h-[30px] w-[30px] rounded-md '/> : <img src={uk} className='h-[30px] w-[30px] rounded-md' alt='english flag'/>}</button>
                 <ul className={`md:flex ${nav ? '' : 'hidden'} w-[100%] mx-auto sm:mb-0 mb-10 md:justify-start md:gap-4 justify-evenly items-center rounded-lg `}>
                     <li className={liStyles}>
                         <button onClick={()=>{
