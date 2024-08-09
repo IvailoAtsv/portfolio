@@ -1,11 +1,12 @@
 import { BsBootstrapFill } from "react-icons/bs";
 import { FaSass, FaShopify, FaArrowDown, FaNodeJs, FaReact, FaHtml5, FaJsSquare, FaCss3Alt } from "react-icons/fa";
 import { SiTailwindcss, SiTypescript, SiMui } from "react-icons/si";
-
+import { TbBrandNextjs } from "react-icons/tb";
 const iconStyle = "mx-6 hover:text-purple text-iconClamp md:mt-1 mt-3"
 
 export const icons = [
     { icon: <FaReact className={iconStyle} />, title: 'React JS' },
+    { icon: <TbBrandNextjs className={iconStyle} />, title: 'Next JS' },
     { icon: <SiTypescript className={iconStyle} />, title: 'Typescript' },
     { icon: <FaNodeJs className={iconStyle} />, title: 'Node JS' },
     { icon: <FaJsSquare className={iconStyle} />, title: 'Javascript' },
