@@ -14,28 +14,28 @@ function App() {
   const [selectedLanguege, setSelectedLanguege] = useState(langueges.bg)
   const [langSwitch, setLangSwitch] = useState(true)
 
-  useEffect(()=>{
-    if(langSwitch){
+  useEffect(() => {
+    if (langSwitch) {
       setSelectedLanguege(langueges.bg)
-    }else{
+    } else {
       setSelectedLanguege(langueges.en)
     }
-  },[langSwitch])
+  }, [langSwitch])
 
   return (
     <main className="w-full overflow-x-hidden pt-20 bg-background relative min-h-screen flex flex-col justify-start items-center">
-      <Navbar setLangSwitch={setLangSwitch} selectedLanguege={selectedLanguege.nav} langSwitch={langSwitch}/>
+      <Navbar setLangSwitch={setLangSwitch} selectedLanguege={selectedLanguege.nav} langSwitch={langSwitch} />
       <SpeedInsights />
       <Analytics />
       <Hero selectedLanguege={selectedLanguege.hero} selectedSkill={selectedSkill} setSelectedSkill={setSelectedSkill} />
-      <Services selectedLanguege={selectedLanguege.services}/>
-      <Experience selectedLanguege={selectedLanguege.experience}/>
+      <Services selectedLanguege={selectedLanguege.services} />
+      <Experience selectedLanguege={selectedLanguege.experience} />
       <Projects
-      selectedLanguege={selectedLanguege.projects}
+        selectedLanguege={selectedLanguege.projects}
         selectedSkill={selectedSkill}
         setSelectedSkill={setSelectedSkill}
       />
-      <ContactMe selectedLanguege={selectedLanguege.contact}/>
+      <ContactMe selectedLanguege={selectedLanguege.contact} />
     </main>
   );
 }

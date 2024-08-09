@@ -80,8 +80,8 @@ export const langueges = {
           desc: 'The Alcona project represents my initiation into building a website from the ground up. During the development process I learnt how to deal with difficult challenges and learn on my own.'
         },
         project2: {
-          title: 'Windy Hills',
-          desc: "This project marks my first dive into full-stack development. Learn about the winery's history, explore the wine selection, and see a testament to my growth in web development."
+          title: 'Misfire',
+          desc: "A website made with NextJS & TypeScript, which displays both the services of the workshop and the price list, working hours, and provides users with the ability to send various inquiries."
         },
         project3: {
           title: 'Ignis Portfolio',
@@ -196,11 +196,11 @@ points: [
           desc: 'Проектът на Alcona представя моето начало в изграждането на уебсайтове от нулата. По време на разработката научих как да се справям с трудни предизвикателства и да се уча сам.'
         },
         project2: {
-          title: 'Windy Hills',
-          desc: "Този проект отбелязва моето първо потапяне във full-stack разработката. Научете за историята на винарната, разгледайте селекцията на вина и вижте свидетелство за моето развитие в уеб разработката."
+          title: 'Автосервиз Misfire',
+          desc: "Уебсайт, направен с NextJS & Тypescript, който показва както дейностите на сервиза, така и ценоразпис, работно време и предоставя възможност на потребителите да изпратят различни запитвания."
         },
         project3: {
-          title: 'Ignis Portfolio',
+          title: 'Ignis Портфолио',
           desc: "Портфолиото на един личен треньор, което подобри способността ми да работя в кратки срокове и потвърди фундаменталните ми знания."
         },
         project4: {

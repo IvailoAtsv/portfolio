@@ -2,16 +2,16 @@ import { Dispatch, SetStateAction, useEffect, useState, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import uniqid from "uniqid";
-import alcona from '../../images/thumbnails/alcona.webp'
-import windyHills from '../../images/thumbnails/windyHills.webp'
-import ignis from '../../images/thumbnails/ignis.mp4'
-import thisP from '../../images/thumbnails/this.webp'
+import alcona from '../../images/thumbnails/alcona.mp4';
+import misfire from '../../images/thumbnails/misfire.mp4';
+import ignis from '../../images/thumbnails/ignis.mp4';
+import thisP from '../../images/thumbnails/this.webp';
 import { AccentTitle, MainTitle } from "../ReusableComponents/Titles";
 
 interface ProjectsProps {
   selectedSkill: string;
   setSelectedSkill: Dispatch<SetStateAction<string>>;
-  selectedLanguege:ProjectsI
+  selectedLanguege: ProjectsI;
 }
 
 interface Project {
@@ -23,7 +23,7 @@ interface Project {
   skills: string[];
 }
 
-interface ProjectCard {
+interface ProjectCardI {
   title: string;
   desc: string;
 }
@@ -31,12 +31,12 @@ interface ProjectCard {
 interface ProjectsI {
   title: string;
   projects: {
-    project1: ProjectCard;
-    project2: ProjectCard;
-    project3: ProjectCard;
-    project4: ProjectCard;
+    project1: ProjectCardI;
+    project2: ProjectCardI;
+    project3: ProjectCardI;
+    project4: ProjectCardI;
   };
-  used:string;
+  used: string;
 }
 
 export const Projects: React.FC<ProjectsProps> = ({
@@ -45,40 +45,47 @@ export const Projects: React.FC<ProjectsProps> = ({
   setSelectedSkill,
 }) => {
 
-const projects = [
-   
-    {
-        github:'https://github.com/IvailoAtsv/alcona-solutions',
-        title: selectedLanguege.projects.project1.title,
-        description:selectedLanguege.projects.project1.desc,
-        src: alcona,
-        skills: ['React JS','Javascript','React-Spring', 'HTML 5', 'Tailwind CSS']
-    },
-    {
-        github:'https://github.com/IvailoAtsv/windyHills',
-        title: selectedLanguege.projects.project2.title,
-        description: selectedLanguege.projects.project2.desc,
-        src: windyHills,
-        skills: ['React JS','Node JS' ,'Javascript', 'HTML 5', 'CSS 3', 'Styled Components']
-    },
-    {
-        github:'https://github.com/IvailoAtsv/Ignis',
-        title: selectedLanguege.projects.project3.title,
-        description: selectedLanguege.projects.project3.desc,
-        video:true,
-        src: ignis,
-        skills: ['Javascript', 'HTML 5', 'CSS 3']
-    },
-    {
-        src:thisP,
-        title:selectedLanguege.projects.project4.title,
-        description:selectedLanguege.projects.project4.desc,
-        github:'https://github.com/IvailoAtsv/portfolio',
-        skills:['React JS', 'Typescript','React-hook-form','React-Spring', 'HTML 5', 'Tailwind CSS']
-    },
-]
+  const [projectList, setProjectList] = useState<Project[]>([]);
 
-  const [projectList, setProjectList] = useState<Project[]>(projects);
+  // Function to create projects based on the selected language
+  const createProjects = () => [
+    {
+      github: 'https://alcona-solutions.vercel.app',
+      title: selectedLanguege.projects.project1.title,
+      description: selectedLanguege.projects.project1.desc,
+      video: true,
+      src: alcona,
+      skills: ['React JS', 'Javascript', 'React-Spring', 'HTML 5', 'Tailwind CSS'],
+    },
+    {
+      github: 'https://misfire-next.vercel.app',
+      title: selectedLanguege.projects.project2.title,
+      description: selectedLanguege.projects.project2.desc,
+      src: misfire,
+      video: true,
+      skills: ['Next JS', 'Typescript', 'Javascript', 'HTML 5', 'Tailwind CSS'],
+    },
+    {
+      github: 'https://github.com/IvailoAtsv/Ignis',
+      title: selectedLanguege.projects.project3.title,
+      description: selectedLanguege.projects.project3.desc,
+      video: true,
+      src: ignis,
+      skills: ['Javascript', 'HTML 5', 'CSS 3'],
+    },
+    {
+      src: thisP,
+      title: selectedLanguege.projects.project4.title,
+      description: selectedLanguege.projects.project4.desc,
+      github: 'https://github.com/IvailoAtsv/portfolio',
+      skills: ['React JS', 'Typescript', 'React-hook-form', 'React-Spring', 'HTML 5', 'Tailwind CSS'],
+    },
+  ];
+
+  // Update project list when the language changes
+  useEffect(() => {
+    setProjectList(createProjects());
+  }, [selectedLanguege]);
 
   const sortBySkillUsage = (skill: string, projects: Project[]) => {
     const projectsUsingSkill = projects.filter((project) =>
@@ -93,12 +100,12 @@ const projects = [
 
   useEffect(() => {
     if (selectedSkill) {
-      setProjectList(sortBySkillUsage(selectedSkill, projectList));
+      setProjectList((prevProjects) => sortBySkillUsage(selectedSkill, prevProjects));
     }
   }, [selectedSkill]);
 
   const allSkills = Array.from(
-    new Set(projects.map((project) => project.skills).flat())
+    new Set(projectList.map((project) => project.skills).flat())
   );
 
   return (
@@ -156,7 +163,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
   skills,
 }) => {
   const ref = useRef(null);
-  const inView = useInView(ref, { once: false});
+  const inView = useInView(ref, { once: true });
 
   return (
     <motion.article
@@ -185,7 +192,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           className="hover:translate-y-[-3px] hover:scale-105 transition duration-300 absolute flex items-center justify-center gap-2 top-[1%] text-purple right-[1%] cursor-pointer"
           rel="noreferrer"
         >
-          Github: <FaExternalLinkAlt size={12} />
+          Link: <FaExternalLinkAlt size={12} />
         </a>
         <h2 className="text-white font-semibold text-xl md:text-3xl">{title}</h2>
         <p className="text-xl mt-auto opacity-75 text-white">{description}</p>
