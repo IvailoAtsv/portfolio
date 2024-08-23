@@ -50,7 +50,7 @@ export const Projects: React.FC<ProjectsProps> = ({
   // Function to create projects based on the selected language
   const createProjects = () => [
     {
-      github: 'https://alcona-solutions.vercel.app',
+      github: 'https://alconasolutions.com',
       title: selectedLanguege.projects.project1.title,
       description: selectedLanguege.projects.project1.desc,
       video: true,

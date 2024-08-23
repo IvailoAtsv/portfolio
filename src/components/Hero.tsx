@@ -58,7 +58,7 @@ export const Hero:React.FC<HeroProps> = ({selectedLanguege, setSelectedSkill, se
     return (
         <main id="home" className="w-full relative h-dvh overflow-x-hidden bg-background flex justify-center items-center">
             {/* {showArrow && <FaArrowDown className={`animate-bounce text-lightGray absolute bottom-0 mx-auto`} size={40} />} */}
-            <div className="max-w-[1800px] py-2 w-[90%] h-[100%] justify-center lg:justify-between flex sm:gap-6 gap-12 items-center flex-col-reverse lg:flex-row ">
+            <div className="max-w-[1800px] py-2 w-[90%] h-[100%] justify-center lg:justify-between flex sm:gap-6 gap-12 items-center flex-col-reverse md:flex-row ">
                 <motion.section
                     initial="hidden"
                     animate="visible"
@@ -83,7 +83,7 @@ export const Hero:React.FC<HeroProps> = ({selectedLanguege, setSelectedSkill, se
                     animate="visible"
                     variants={enterRightAnimation}
                     transition={{ duration: 0.3 }}
-                    className="lg:w-[50%] w-[80%] relative max-w-[750px] overflow-hidden"
+                    className="lg:w-[50%] md:w-[80%] w-[90%] relative max-w-[750px] overflow-hidden"
                 >
                     <img alt="Animation displaying all of my skills" src={laptop} className="w-[100%] object-cover" />
                     <div className='shadow-md absolute top-[2.3%] bg-black left-[13.5%] max-w-[600px] w-[73%] h-[65.5%] text-lightGray my-auto'>
