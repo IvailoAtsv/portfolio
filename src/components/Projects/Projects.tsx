@@ -6,6 +6,8 @@ import alcona from '../../images/thumbnails/alcona.mp4';
 import misfire from '../../images/thumbnails/misfire.mp4';
 import ignis from '../../images/thumbnails/ignis.mp4';
 import thisP from '../../images/thumbnails/this.webp';
+import melko from '../../images/thumbnails/melko.mp4'
+import hbe from '../../images/thumbnails/hbe.mp4'
 import { AccentTitle, MainTitle } from "../ReusableComponents/Titles";
 
 interface ProjectsProps {
@@ -35,6 +37,8 @@ interface ProjectsI {
     project2: ProjectCardI;
     project3: ProjectCardI;
     project4: ProjectCardI;
+    project5: ProjectCardI;
+    project6: ProjectCardI;
   };
   used: string;
 }
@@ -50,11 +54,27 @@ export const Projects: React.FC<ProjectsProps> = ({
   // Function to create projects based on the selected language
   const createProjects = () => [
     {
+      github: 'https://melko.vercel.app',
+      title: selectedLanguege.projects.project5.title,
+      description: selectedLanguege.projects.project5.desc,
+      video: true,
+      src: melko,
+      skills: ['Next JS', 'Javascript', 'Framer-motion', 'HTML 5', 'Tailwind CSS'],
+    },
+    {
       github: 'https://alconasolutions.com',
       title: selectedLanguege.projects.project1.title,
       description: selectedLanguege.projects.project1.desc,
       video: true,
       src: alcona,
+      skills: ['React JS', 'Javascript', 'React-Spring', 'HTML 5', 'Tailwind CSS'],
+    },
+    {
+      github: 'https://handmadebyes.art',
+      title: selectedLanguege.projects.project6.title,
+      description: selectedLanguege.projects.project6.desc,
+      video: true,
+      src: hbe,
       skills: ['React JS', 'Javascript', 'React-Spring', 'HTML 5', 'Tailwind CSS'],
     },
     {

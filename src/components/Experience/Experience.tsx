@@ -48,7 +48,7 @@ export const Experience:React.FC<{selectedLanguege:Experience}> = ({selectedLang
     jobTitle: selectedLanguege.expCards.card1.title,
     date: '06-2023 - Ongoing',
     descriptionPoints:selectedLanguege.expCards.card1.points,
-    skills: ['React JS', 'Node JS', 'Mongoose', 'MongoDB', 'Styled Components', 'UX/UI', 'HTML 5', 'CSS 3', 'JavaScript', 'Tailwind CSS', 'Next JS', 'TypeScript'],
+    skills: ['React JS', 'Next JS', 'TypeScript', 'JavaScript', 'Node JS', 'Mongoose', 'MongoDB', 'Styled Components', 'UX/UI', 'HTML 5', 'CSS 3', 'Tailwind CSS'],
     location: 'Remote'
   },
   {

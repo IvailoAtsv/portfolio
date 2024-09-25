@@ -1,11 +1,11 @@
 export const langueges = {
   en: {
-    nav:{
-        home:'Home',
-        journey:'My Journey',
-        projects:"Projects",
-        services:"Services",
-        contacts:"Contacts",
+    nav: {
+      home: 'Home',
+      journey: 'My Journey',
+      projects: "Projects",
+      services: "Services",
+      contacts: "Contacts",
     },
     hero: {
       accentTitle: 'Hi, my name is ...',
@@ -68,11 +68,11 @@ export const langueges = {
       mentorship: "Other",
       mentCard: {
         title: "Mentorship",
-        points: ['Being a mentor to two people in their programming journey has been a rewarding experience. I focused on guiding them through the fundamental concepts of programming, ensuring they developed a strong and deep understanding.','Our mentorship went beyond theory, with hands-on projects being a key component. Working together on real-world coding projects allowed them to apply their knowledge in practical scenarios, reinforcing their learning and problem-solving skills.','Explaining programming concepts has reinforced my own understanding. Teaching others requires a thorough grasp of the material, and the mentorship has provided me with opportunities to revisit and solidify my knowledge. This mutual learning dynamic has contributed to my own growth as a programmer.']
+        points: ['Being a mentor to two people in their programming journey has been a rewarding experience. I focused on guiding them through the fundamental concepts of programming, ensuring they developed a strong and deep understanding.', 'Our mentorship went beyond theory, with hands-on projects being a key component. Working together on real-world coding projects allowed them to apply their knowledge in practical scenarios, reinforcing their learning and problem-solving skills.', 'Explaining programming concepts has reinforced my own understanding. Teaching others requires a thorough grasp of the material, and the mentorship has provided me with opportunities to revisit and solidify my knowledge. This mutual learning dynamic has contributed to my own growth as a programmer.']
       }
     },
     projects: {
-      used:'Used:',
+      used: 'Used:',
       title: 'Some of my projects',
       projects: {
         project1: {
@@ -91,6 +91,14 @@ export const langueges = {
           title: 'And of course...',
           desc: "Don't forget to check out this portfiolio's github repo!"
         },
+        project5: {
+          title: 'Melko /development paused/',
+          desc: "My largest project and my first collaboration with a professional designer. the website features a nice catalog, full order process, an admin dashboard where they can add new recipes and much more!"
+        },
+        project6: {
+          title: 'Handmade by ES',
+          desc: "A small online store featuring a simple landing page, a product catalog, and an admin dashboard where the owner can upload and manage items."
+        }
       }
     },
     contact: {
@@ -98,9 +106,9 @@ export const langueges = {
       main1: 'Get in touch now',
       main2: 'Find me on...',
       or: 'or',
-      nameErr:'Please enter a name',
-      mailErr:'Please enter a valid email',
-      questionErr:'Please leave a message',
+      nameErr: 'Please enter a name',
+      mailErr: 'Please enter a valid email',
+      questionErr: 'Please leave a message',
       name: "What's your name?",
       mail: 'Your favourite email?',
       question: "What's on your mind?",
@@ -112,12 +120,12 @@ export const langueges = {
     },
   },
   bg: {
-    nav:{
-        home:'Начало',
-        journey:'Моя Опит',
-        projects:"Проекти",
-        services:"Услуги",
-        contacts:"Контакти",
+    nav: {
+      home: 'Начало',
+      journey: 'Моя Опит',
+      projects: "Проекти",
+      services: "Услуги",
+      contacts: "Контакти",
     },
     hero: {
       accentTitle: 'Здравейте, казвам се...',
@@ -180,15 +188,15 @@ export const langueges = {
       mentorship: "Други",
       mentCard: {
         title: "Менторство",
-points: [
-    'Да бъда ментор на няколко души в тяхното програмиране беше възнаграждаващо преживяване. Фокусирах се върху ръководството им през основните концепции на програмирането, като се уверих, че развиват силно и дълбоко разбиране.',
-    'Нашето менторство излезе отвъд теорията, като ключов компонент бяха практическите проекти. Работата заедно по реални проекти позволи на тях да приложат знанията си в практични сценарии, укрепвайки техните умения за учене и решаване на проблеми.',
-    'Обясняването на програмирането е укрепило моето собствено разбиране. Обучението на другите изисква задълбочено усвояване на материала, а менторството ми предостави възможности да прегледам и затвърдя своите знания. Тази взаимна динамика на учене допринесе за моя собствен растеж като програмист.'
-]
+        points: [
+          'Да бъда ментор на няколко души в тяхното програмиране беше възнаграждаващо преживяване. Фокусирах се върху ръководството им през основните концепции на програмирането, като се уверих, че развиват силно и дълбоко разбиране.',
+          'Нашето менторство излезе отвъд теорията, като ключов компонент бяха практическите проекти. Работата заедно по реални проекти позволи на тях да приложат знанията си в практични сценарии, укрепвайки техните умения за учене и решаване на проблеми.',
+          'Обясняването на програмирането е укрепило моето собствено разбиране. Обучението на другите изисква задълбочено усвояване на материала, а менторството ми предостави възможности да прегледам и затвърдя своите знания. Тази взаимна динамика на учене допринесе за моя собствен растеж като програмист.'
+        ]
       }
     },
     projects: {
-      used:"Използвана технология:",
+      used: "Използвана технология:",
       title: 'Някои от моите проекти',
       projects: {
         project1: {
@@ -207,6 +215,14 @@ points: [
           title: 'И, разбира се...',
           desc: "Не забравяйте да видите как съм направил това портфолио в Github!"
         },
+        project5: {
+          title: 'Мелко /паузиранa разработка/',
+          desc: "Най-големият ми проект и първото ми сътрудничество с професионален дизайнер. Уебсайтът включва пълен каталог, пълен процес на поръчка, администраторски панел от където могат да се добавят нови рецепти и още много!"
+        },
+        project6: {
+          title: 'Handmade by ES',
+          desc: "Малък онлайн магазин със кратка начална страница, продуктов каталог и администраторски панел, където собственикът може да качва и управлява продуктите си."
+        }
       }
     },
     contact: {
@@ -215,11 +231,11 @@ points: [
       main2: 'Намерете ме на...',
       or: 'или...',
       name: "Как се казвате?",
-      nameErr:'Въведете валидно име',
+      nameErr: 'Въведете валидно име',
       mail: 'Вашият любим имейл?',
-      mailErr:'Въведете валиден имейл',
+      mailErr: 'Въведете валиден имейл',
       question: "Какво ви интересува?",
-      questionErr:'Въведете съобщение',
+      questionErr: 'Въведете съобщение',
       btn1: 'Изпрати',
       go: 'Отидете',
       sending: 'Изпращане...',
