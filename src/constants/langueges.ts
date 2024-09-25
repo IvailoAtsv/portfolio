@@ -92,8 +92,8 @@ export const langueges = {
           desc: "Don't forget to check out this portfiolio's github repo!"
         },
         project5: {
-          title: 'Melko /development paused/',
-          desc: "My largest project and my first collaboration with a professional designer. the website features a nice catalog, full order process, an admin dashboard where they can add new recipes and much more!"
+          title: 'Melko',
+          desc: " /development paused/ My largest project and my first collaboration with a professional designer. the website features a nice catalog, full order process, an admin dashboard where they can add new recipes and much more!"
         },
         project6: {
           title: 'Handmade by ES',
@@ -216,8 +216,8 @@ export const langueges = {
           desc: "Не забравяйте да видите как съм направил това портфолио в Github!"
         },
         project5: {
-          title: 'Мелко /паузиранa разработка/',
-          desc: "Най-големият ми проект и първото ми сътрудничество с професионален дизайнер. Уебсайтът включва пълен каталог, пълен процес на поръчка, администраторски панел от където могат да се добавят нови рецепти и още много!"
+          title: 'Мелко',
+          desc: " /паузиранa разработка/ Най-големият ми проект и първото ми сътрудничество с професионален дизайнер. Уебсайтът включва пълен каталог, пълен процес на поръчка, администраторски панел от където могат да се добавят нови рецепти и още много!"
         },
         project6: {
           title: 'Handmade by ES',

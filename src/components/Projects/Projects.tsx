@@ -85,14 +85,7 @@ export const Projects: React.FC<ProjectsProps> = ({
       video: true,
       skills: ['Next JS', 'Typescript', 'Javascript', 'HTML 5', 'Tailwind CSS'],
     },
-    {
-      github: 'https://github.com/IvailoAtsv/Ignis',
-      title: selectedLanguege.projects.project3.title,
-      description: selectedLanguege.projects.project3.desc,
-      video: true,
-      src: ignis,
-      skills: ['Javascript', 'HTML 5', 'CSS 3'],
-    },
+  
     {
       src: thisP,
       title: selectedLanguege.projects.project4.title,
