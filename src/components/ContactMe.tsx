@@ -131,8 +131,8 @@ export const ContactMe:React.FC<{selectedLanguege:ContactI}> = ({selectedLangueg
       >
         <AccentTitle text={selectedLanguege.accentTitle} classes="mr-auto" />
       </animated.section>
-      <div className="max-w-[1800px] min-h-[90vh] lg:min-h-[45vh] py-4 relative w-[90%] justify-between flex flex-col lg:flex-row items-start">
-        {sent ? (
+      <div className="max-w-[1800px] min-h-[60vh] lg:min-h-[45vh] py-4 relative w-[90%] justify-between flex flex-col lg:flex-row items-start">
+        {/* {sent ? (
           <div className="flex-2 w-full flex p-4 flex-col lg:max-w-[42%] justify-center items-start rounded-xl">
             {loading ? (
               <h2 className="text-4xl text-white font-semibold animate-pulse">
@@ -206,13 +206,13 @@ export const ContactMe:React.FC<{selectedLanguege:ContactI}> = ({selectedLangueg
               {selectedLanguege.btn1}
             </button>
           </animated.form>
-        )}
-        <animated.div
+        )} */}
+        {/* <animated.div
           style={findMeAnimation}
           className="text-center w-full flex-1 py-8 lg:py-3 self-center"
         >
           <AccentTitle text={selectedLanguege.or} classes="overflow-hidden z-50" />
-        </animated.div>
+        </animated.div> */}
         <animated.section
           style={findMeAnimation}
           className="text-white p-4 border-white flex-2 w-full lg:max-w-[42%] rounded-xl flex flex-col justify-between items-start"
