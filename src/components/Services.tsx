@@ -66,7 +66,7 @@ export const Services: React.FC<{selectedLanguege: ServicesI }> = ({selectedLang
         />
       ))}
         </section>
-        <a href="#contact" className={`${buttonStyle} mx-auto mt-6`}>
+        <a href="https://webdiv.studio" target="_blank" rel="noreferrer" className={`${buttonStyle} mx-auto mt-6`}>
           {selectedLanguege.btn}
         </a>
       </div>
