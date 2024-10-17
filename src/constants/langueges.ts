@@ -57,11 +57,11 @@ export const langueges = {
           ],
         },
         card2: {
-          title: 'Full Stack Developer | Internship',
+          title: 'Full Stack Developer | Internship (unfinished)',
           points: [
             "Demonstrated rapid learning and adaptability by mastering new technologies within a short timeframe.",
             "Successfully passed challenging exams, validating a solid understanding of complex concepts and technologies.",
-            "Developed a substantial project over the course of ~5 months, exhibiting strong project management and coding skills. The finished project stands as a testament to improvement and quality workmanship."
+            "Almost finished a substantial project over the course of ~5 months, exhibiting strong coding skills. The finished project stands as a testament to improvement and quality worksmanship."
           ]
         }
       },
