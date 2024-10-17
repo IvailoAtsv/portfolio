@@ -88,8 +88,8 @@ export const langueges = {
           desc: "A Personal trainer's portfiolio, which improved my ability to work within tight deadlines, and reaffirmed my fundamental knowledge."
         },
         project4: {
-          title: 'And of course...',
-          desc: "Don't forget to check out this portfiolio's github repo!"
+          title: 'Web Agency WebDiv',
+          desc: "Website showing the services and portfolio of the WebDiv Web Agency. Featuring a blog, and near-perfect SEO optimisation for each page with a dynamic sitemap and much more."
         },
         project5: {
           title: 'Melko',
@@ -212,8 +212,8 @@ export const langueges = {
           desc: "Портфолиото на един личен треньор, което подобри способността ми да работя в кратки срокове и потвърди фундаменталните ми знания."
         },
         project4: {
-          title: 'И, разбира се...',
-          desc: "Не забравяйте да видите как съм направил това портфолио в Github!"
+          title: 'WebDiv Уеб Агенция',
+          desc: "Уебсайт, който показва услугите и портфолиото на уеб агенцията WebDiv. В сайта има напълно работещ блог, както и отлично оптимизирани страници за SEO, с динамичен sitemap и още много."
         },
         project5: {
           title: 'Мелко',

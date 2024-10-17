@@ -4,7 +4,7 @@ import { FaExternalLinkAlt } from "react-icons/fa";
 import uniqid from "uniqid";
 import alcona from '../../images/thumbnails/alcona.mp4';
 import misfire from '../../images/thumbnails/misfire.mp4';
-import ignis from '../../images/thumbnails/ignis.mp4';
+import webdiv from '../../images/thumbnails/webdiv.mp4';
 import thisP from '../../images/thumbnails/this.webp';
 import melko from '../../images/thumbnails/melko.mp4'
 import hbe from '../../images/thumbnails/hbe.mp4'
@@ -59,7 +59,7 @@ export const Projects: React.FC<ProjectsProps> = ({
       description: selectedLanguege.projects.project5.desc,
       video: true,
       src: melko,
-      skills: ['Next JS', 'Javascript', 'Framer-motion', 'HTML 5', 'Tailwind CSS'],
+      skills: ['Next JS', 'Javascript', 'Framer-motion', 'HTML 5', 'Tailwind CSS', 'Node JS', 'Express', 'EmailJS', 'MongoDB'],
     },
     {
       github: 'https://alconasolutions.com',
@@ -75,7 +75,7 @@ export const Projects: React.FC<ProjectsProps> = ({
       description: selectedLanguege.projects.project6.desc,
       video: true,
       src: hbe,
-      skills: ['React JS', 'Javascript', 'React-Spring', 'HTML 5', 'Tailwind CSS'],
+      skills: ['Next JS', 'Javascript', 'Framer-motion', 'HTML 5', 'Tailwind CSS', 'Node JS', 'Express', 'EmailJS', 'MongoDB'],
     },
     {
       github: 'https://misfire-next.vercel.app',
@@ -87,11 +87,12 @@ export const Projects: React.FC<ProjectsProps> = ({
     },
   
     {
-      src: thisP,
+      src: webdiv,
+      video:true,
       title: selectedLanguege.projects.project4.title,
       description: selectedLanguege.projects.project4.desc,
       github: 'https://github.com/IvailoAtsv/portfolio',
-      skills: ['React JS', 'Typescript', 'React-hook-form', 'React-Spring', 'HTML 5', 'Tailwind CSS'],
+      skills: ['Next JS', 'Javascript', 'React-hook-form', 'Framer-motion', 'HTML 5', 'Tailwind CSS'],
     },
   ];
 
@@ -193,7 +194,7 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           playsInline={true}
           loop={true}
           src={src}
-          className="md:min-w-[400px] max-w-[100%] rounded-md lg:h-[100%]"
+          className="md:min-w-[400px] max-w-[100%] object-cover rounded-md lg:h-[100%]"
         />
       ) : (
         <img src={src} className="md:min-w-[400px] max-w-[100%] rounded-md lg:h-[100%]" alt="Project front-page" />
