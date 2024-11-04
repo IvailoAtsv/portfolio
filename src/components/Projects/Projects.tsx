@@ -91,7 +91,7 @@ export const Projects: React.FC<ProjectsProps> = ({
       video:true,
       title: selectedLanguege.projects.project4.title,
       description: selectedLanguege.projects.project4.desc,
-      github: 'https://github.com/IvailoAtsv/portfolio',
+      github: 'https://webdiv.studio',
       skills: ['Next JS', 'Javascript', 'React-hook-form', 'Framer-motion', 'HTML 5', 'Tailwind CSS'],
     },
   ];
